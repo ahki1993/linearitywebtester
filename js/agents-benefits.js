@@ -45,7 +45,7 @@ class AgentsBenefitsManager {
     async loadBenefits() {
         try {
             console.log('AgentsBenefits: Caricamento benefit cards...');
-            const response = await fetch('/api/config/agents-benefits');
+            const response = await fetch('config/agents-benefits.json');
             console.log('AgentsBenefits: Response status:', response.status);
             
             if (!response.ok) {

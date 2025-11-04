@@ -19,7 +19,7 @@ class HeroSectionManager {
 
     async loadSettings() {
         try {
-            const res = await fetch('/api/config/hero-settings');
+            const res = await fetch('config/hero-settings.json');
             if (!res.ok) throw new Error('Failed to load hero settings');
             this.settings = await res.json();
         } catch (err) {

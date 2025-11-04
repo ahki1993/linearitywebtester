@@ -33,7 +33,7 @@ class AgentsSectionManager {
     
     async loadSettings() {
         try {
-            const response = await fetch('/api/config/agents-settings');
+            const response = await fetch('config/agents-settings.json');
             this.settings = await response.json();
         } catch (error) {
             console.error('Errore caricamento impostazioni agenti:', error);

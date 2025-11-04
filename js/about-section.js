@@ -23,7 +23,7 @@ class AboutSectionManager {
 
     async loadSettings() {
         try {
-            const response = await fetch('/api/config/about-settings');
+            const response = await fetch('config/about-settings.json');
             if (!response.ok) throw new Error('Errore nel caricamento delle impostazioni about');
             this.settings = await response.json();
         } catch (error) {
