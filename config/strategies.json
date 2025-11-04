@@ -1,0 +1,238 @@
+{
+  "high": {
+    "attachments": {
+      "enabled": true,
+      "files": [
+        {
+          "description": {
+            "en": "Complete document about High Risk strategy",
+            "it": "Documento completo sulla strategia High Risk"
+          },
+          "descriptionStyle": {
+            "bold": false,
+            "fontSize": "14px",
+            "italic": false,
+            "underline": false
+          },
+          "enabled": true,
+          "filePath": "/attachments/high-risk-guide.pdf",
+          "fileType": "pdf",
+          "icon": "file-pdf",
+          "id": 1,
+          "title": {
+            "en": "Strategy Guide",
+            "it": "Guida Strategia"
+          }
+        }
+      ],
+      "title": {
+        "en": "Documents and Attachments",
+        "it": "Documenti e Allegati"
+      },
+      "titleStyle": {
+        "align": "left",
+        "bold": true,
+        "fontSize": "24px",
+        "italic": false,
+        "marginBottom": "15px",
+        "underline": false
+      }
+    },
+    "description": {
+      "en": "Aggressive strategy for experienced traders seeking maximum returns. Requires tolerance for higher drawdowns in exchange for potentially superior profits. Exploits market opportunities with larger positions and advanced trading techniques.",
+      "it": "Strategia aggressiva per trader esperti che cercano i massimi rendimenti. Richiede tolleranza ai drawdown più elevati in cambio di profitti potenzialmente superiori. Sfrutta le opportunità di mercato con posizioni più grandi e tecniche di trading avanzate."
+    },
+    "drawdown": "20-30%",
+    "features": [
+      {
+        "en": "Profit maximization",
+        "it": "Massimizzazione dei profitti"
+      },
+      {
+        "en": "Larger positions",
+        "it": "Posizioni più grandi"
+      },
+      {
+        "en": "Advanced trading techniques",
+        "it": "Tecniche di trading avanzate"
+      },
+      {
+        "en": "For experienced traders",
+        "it": "Per trader esperti"
+      }
+    ],
+    "minInvestment": "$5,000",
+    "name": {
+      "en": "High Risk",
+      "it": "High Risk"
+    },
+    "return": "15-25% / mese",
+    "risk": "high",
+    "riskLabel": {
+      "en": "High",
+      "it": "Alto"
+    },
+    "tagline": {
+      "en": "Maximum performance",
+      "it": "Massima performance"
+    },
+    "titleStyle": {
+      "align": "center",
+      "bold": false,
+      "fontSize": "36px",
+      "italic": false,
+      "marginBottom": "20px",
+      "underline": false
+    }
+  },
+  "low": {
+    "attachments": {
+      "enabled": true,
+      "files": [
+        {
+          "description": {
+            "en": "",
+            "it": ""
+          },
+          "descriptionStyle": {
+            "bold": false,
+            "fontSize": "14px",
+            "italic": false,
+            "underline": false
+          },
+          "enabled": true,
+          "filePath": "/attachments/bt_linearity_shield_LR_20251104_200502.pdf",
+          "fileType": "pdf",
+          "icon": "file-pdf",
+          "id": 1,
+          "title": {
+            "en": "Backtest 2020-2025",
+            "it": "Backtest 2020-2025"
+          }
+        }
+      ],
+      "title": {
+        "it": "",
+        "en": ""
+      },
+      "titleStyle": {
+        "fontSize": "",
+        "bold": false,
+        "italic": false,
+        "underline": false,
+        "align": "center",
+        "marginBottom": "px"
+      }
+    },
+    "description": {
+      "en": "",
+      "it": "<div>La strategia <b>Linearity Shield</b>, è una strategia pensata per chi cerca un profitto buono ma conservativo!&nbsp;</div><div><br>Deposito minimo richiesto: 500€&nbsp;</div><div>Deposito consigliato: 1000€</div><div><br>&gt; <b>Operatività</b></div><div><div> Linearity Shield, opera dal Lunedì al Venerdì, H24, su 5 coppie forex:</div><div><ul><li><i><b>EUR/USD</b></i></li><li><i><b>USD/CAD</b></i></li><li><i><b>AUD/USD</b></i></li><li><i><b>GBP/USD</b></i></li><li><i><b>AUD/CAD</b></i></li></ul></div><br><div align=\"justify\">La strategia fa uso, quando necessario, di un sistema a griglia con size leggere: quasi sempre fisse, con sporadici incrementi non martingala (mai raddoppiati).<br>Questo permette di mantenere un rischio controllato e un’ottima capacità di adattamento ai diversi contesti di mercato.<br>Il conto aprirà quindi sempre una prima posizione con size da 0.01, mai superiore. ⁣<br></div>⁣<br>&gt; <b>Take Profit e Stop Loss</b><br><div align=\"justify\">Il sistema di chiusura delle operazioni è dettato da Take Profit e Trailing Stop, cercando di ottenere piccoli ma quotidiani profitti.⁣<br>Lo stoploss totale è fissato nel termine del 30% dalla strategia, ma è discrezione del cliente decidere di impostarne uno personale. Consigliamo tuttavia di attenersi allo stoploss da noi impostato.⁣<br></div><br>&gt;&nbsp;<b>Broker<br></b>La strategia opera all'interno del broker FP Markets - FPM Trading<br><br><b>&gt; Risk Management</b><br><div align=\"justify\">La strategia si è dimostrata capace di operare anche in contesti di forti news economiche, pertanto non è previsto un controllo di pausa operatività in vista di quest'ultime, eccezion fatta per gli NFP. Ad ogni modo, sarà nostra cura monitorare l'andamento del mercato e decidere in modo discrezionale di sospendere l'operatività qualora lo ritenessimo opportuno al fine di scongiurare esposizioni al mercato superflue.&nbsp;</div></div><div><br></div><div><b>&gt; Commissioni</b><br>La strategia prevede commissioni pari al 30% sui profitti netti. Qualora l'equity risultasse negativa, non verrà applicata alcuna commissione fino al raggiungimento di un rendimento positivo.<br><br><b>&gt;Tipologia di Conto<br></b>• Piattaforma: Metatrader 5&nbsp;<br>• Tipologia: Raw&nbsp;<br>• Valuta: EUR<br>• Leva: 1:500<br><br><div align=\"justify\">Il nostro consiglio è la creazione di un conto specifico a parte per seguire la strategia e non di utilizzare lo stesso conto con cui si seguono altre strategie del nostro Ecosistema Linearity.<br>Questo per ottenere una diversificazione totale, sia in termini di strumenti finanziari tradati, sia in termini di allocazione distribuita del capitale. Detto questo, è comunque possibile seguire su un unico conto entrambe le strategie, purché vengano rispettati i depositi consigliati e non i depositi minimi.<br></div><b><br></b></div>"
+    },
+    "drawdown": "10-30%",
+    "features": [
+      {
+        "en": "Conservative risk management",
+        "it": "Gestione del rischio conservativa"
+      },
+      {
+        "en": "Maximum diversification",
+        "it": "Diversificazione massima"
+      },
+      {
+        "en": "Strict stop losses",
+        "it": "Stop loss rigidi"
+      },
+      {
+        "en": "Capital protection priority",
+        "it": "Protezione del capitale prioritaria"
+      }
+    ],
+    "minInvestment": "$1,000",
+    "name": {
+      "en": "Linearity Shield - Low Risk",
+      "it": "Linearity Shield - Low Risk"
+    },
+    "return": "3-5%",
+    "risk": "low",
+    "riskLabel": {
+      "en": "Low",
+      "it": "Basso"
+    },
+    "tagline": {
+      "en": "Stable e secure Growth",
+      "it": "Crescita stabile e sicura!"
+    },
+    "titleStyle": {
+      "align": "center",
+      "bold": false,
+      "fontSize": "32px",
+      "italic": false,
+      "marginBottom": "30px",
+      "underline": false
+    }
+  },
+  "medium": {
+    "attachments": {
+      "enabled": true,
+      "files": [],
+      "title": {
+        "en": "Documents and Attachments",
+        "it": "Documenti e Allegati"
+      },
+      "titleStyle": {
+        "align": "left",
+        "bold": true,
+        "fontSize": "24px",
+        "italic": false,
+        "marginBottom": "15px",
+        "underline": false
+      }
+    },
+    "description": {
+      "en": "<div align=\"center\">The most popular strategy that balances risk and return. Perfect for those seeking significant growth while maintaining a controlled risk level. Combines conservative operations with more aggressive growth opportunities in favorable market conditions.</div>",
+      "it": "<div align=\"center\">La strategia più popolare che bilancia rischio e rendimento. Perfetta per chi cerca crescita significativa mantenendo un livello di rischio controllato. Combina operazioni conservative con opportunità di crescita più aggressive in condizioni di mercato favorevoli.</div>"
+    },
+    "drawdown": "35-40%",
+    "features": [
+      {
+        "en": "Optimal risk/return balance",
+        "it": "Bilanciamento rischio/rendimento ottimale"
+      },
+      {
+        "en": "Dynamic market adaptation",
+        "it": "Adattamento dinamico al mercato"
+      },
+      {
+        "en": "Mix of conservative and aggressive strategies",
+        "it": "Mix di strategie conservative e aggressive"
+      },
+      {
+        "en": "Continuous monitoring",
+        "it": "Monitoraggio continuo"
+      }
+    ],
+    "minInvestment": "$2,000",
+    "name": {
+      "en": "Medium Risk",
+      "it": "Medium Risk"
+    },
+    "return": "8-12%",
+    "risk": "medium",
+    "riskLabel": {
+      "en": "Medium",
+      "it": "Medio"
+    },
+    "tagline": {
+      "en": "The perfect balance",
+      "it": "Il perfetto equilibrio"
+    },
+    "titleStyle": {
+      "align": "center",
+      "bold": false,
+      "fontSize": "36px",
+      "italic": false,
+      "marginBottom": "20px",
+      "underline": false
+    }
+  }
+}

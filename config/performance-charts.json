@@ -1,0 +1,151 @@
+{
+  "charts": [
+    {
+      "currency": "€",
+      "data": [
+        {
+          "month": "2025-01",
+          "value": 10
+        },
+        {
+          "month": "2024-07",
+          "value": 10
+        },
+        {
+          "month": "2024-09",
+          "value": 30
+        }
+      ],
+      "enabled": false,
+      "id": 1,
+      "startDate": "2024-01-01",
+      "title": {
+        "en": "Low Risk ",
+        "it": "Low Risk"
+      },
+      "totalPercentage": 5,
+      "totalProfit": 50
+    },
+    {
+      "currency": "€",
+      "data": [
+        {
+          "month": "2025-06",
+          "value": 0
+        },
+        {
+          "month": "2025-07",
+          "value": 58.92
+        },
+        {
+          "month": "2025-08",
+          "value": 49.52
+        },
+        {
+          "month": "2025-09",
+          "value": 131.16
+        },
+        {
+          "month": "2025-10",
+          "value": 130.97
+        }
+      ],
+      "enabled": true,
+      "id": 2,
+      "startDate": "2025-06-01",
+      "title": {
+        "en": "Mid Risk",
+        "it": " Mid Risk"
+      },
+      "totalPercentage": 37,
+      "totalProfit": 370.15
+    },
+    {
+      "currency": "€",
+      "data": [
+        {
+          "month": "2024-01",
+          "value": 520
+        },
+        {
+          "month": "2024-02",
+          "value": 1180
+        },
+        {
+          "month": "2024-03",
+          "value": 1920
+        },
+        {
+          "month": "2024-04",
+          "value": 2650
+        },
+        {
+          "month": "2024-05",
+          "value": 3420
+        },
+        {
+          "month": "2024-06",
+          "value": 4280
+        },
+        {
+          "month": "2024-07",
+          "value": 5180
+        },
+        {
+          "month": "2024-08",
+          "value": 6050
+        },
+        {
+          "month": "2024-09",
+          "value": 6880
+        },
+        {
+          "month": "2024-10",
+          "value": 7520
+        },
+        {
+          "month": "2024-11",
+          "value": 7950
+        },
+        {
+          "month": "2024-12",
+          "value": 8250
+        }
+      ],
+      "enabled": false,
+      "id": 3,
+      "startDate": "2024-01-01",
+      "title": {
+        "en": "High Risk Strategy Performance",
+        "it": "Performance Strategia High Risk"
+      },
+      "totalPercentage": 82.5,
+      "totalProfit": 8250
+    }
+  ],
+  "settings": {
+    "autoRotate": false,
+    "rotationInterval": 5000,
+    "theme": {
+      "dark": {
+        "backgroundColor": "#1a1a1a",
+        "badgeBackground": "rgba(200, 162, 94, 0.2)",
+        "badgeBorder": "#C8A25E",
+        "fillColor": "rgba(200, 162, 94, 0.15)",
+        "gridColor": "rgba(200, 162, 94, 0.1)",
+        "lineColor": "#C8A25E",
+        "textColor": "#E5E5E5"
+      },
+      "light": {
+        "backgroundColor": "#F8F6F3",
+        "badgeBackground": "rgba(139, 115, 85, 0.1)",
+        "badgeBorder": "#8B7355",
+        "fillColor": "rgba(139, 115, 85, 0.15)",
+        "gridColor": "rgba(139, 115, 85, 0.1)",
+        "lineColor": "#8B7355",
+        "textColor": "#2C2C2C"
+      }
+    },
+    "visibleCharts": 1
+  }
+}

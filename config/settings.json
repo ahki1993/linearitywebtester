@@ -1,0 +1,49 @@
+{
+  "analytics": {
+    "enableTracking": false,
+    "facebookPixelId": "",
+    "googleAnalyticsId": ""
+  },
+  "api": {
+    "myfxbook": {
+      "accountId": "",
+      "apiUrl": "https://www.myfxbook.com/api/",
+      "widgetId": ""
+    }
+  },
+  "features": {
+    "autoDetectLanguage": true,
+    "defaultLanguage": "it",
+    "defaultTheme": "dark",
+    "enableAnimations": true,
+    "enableDebug": false
+  },
+  "lastUpdated": "2024-11-02",
+  "performance": {
+    "monthlyProfit": 38.7,
+    "successRate": 87.3,
+    "totalProfit": "$12.4M",
+    "totalSubscribers": 2547,
+    "totalTrades": 45892,
+    "weeklyProfit": 12.4,
+    "yearlyProfit": 127.5
+  },
+  "site": {
+    "author": "Linearity Trading Team",
+    "description": "Piattaforma professionale di copy trading con strategie diversificate per ogni profilo di rischio",
+    "email": "info@linearity-trading.com",
+    "keywords": "copy trading, forex, trading automatico, investimenti, strategie trading, low risk, medium risk, high risk",
+    "phone": "+39 012 345 6789",
+    "telegram": "@linearitytrading",
+    "title": "Linearity Trading",
+    "url": "https://www.linearity-trading.com"
+  },
+  "social": {
+    "facebook": "https://facebook.com/linearitytrading",
+    "instagram": "https://instagram.com/linearitytrading",
+    "linkedin": "https://linkedin.com/company/linearitytrading",
+    "telegram": "https://t.me/linearitytrading",
+    "twitter": "https://twitter.com/linearitytrading"
+  },
+  "version": "1.0.0"
+}

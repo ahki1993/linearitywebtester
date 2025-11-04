@@ -1,0 +1,41 @@
+{
+  "title": {
+    "it": "Diventa un Agente",
+    "en": "Become an Agent",
+    "fontSize": "36px",
+    "bold": false,
+    "italic": false,
+    "underline": false
+  },
+  "subtitle": {
+    "it": "Guadagna promuovendo i nostri servizi di copy trading",
+    "en": "Earn by promoting our copy trading services",
+    "fontSize": "18px",
+    "bold": false,
+    "italic": false,
+    "underline": false
+  },
+  "cta": {
+    "title": {
+      "it": "Pronto a iniziare?",
+      "en": "Ready to start?",
+      "fontSize": "28px",
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "description": {
+      "it": "Unisciti al nostro programma agenti oggi stesso",
+      "en": "Join our agent program today",
+      "fontSize": "16px",
+      "bold": false,
+      "italic": false,
+      "underline": false
+    },
+    "button": {
+      "it": "Diventa Agente",
+      "en": "Become Agent",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSf_PGJ26RBPW8ftP2vAU9USbjOwBDKLmZr3fkl8XThwxhupeg/viewform"
+    }
+  }
+}

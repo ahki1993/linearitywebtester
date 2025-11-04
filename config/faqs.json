@@ -1,0 +1,79 @@
+{
+  "en": {
+    "items": [
+      {
+        "answer": "Linearity is a copy trading platform that allows you to replicate strategies from professional traders.",
+        "id": 1,
+        "question": "What is Linearity?"
+      },
+      {
+        "answer": "You can apply via our contact form or reach out on Telegram for more information.",
+        "id": 2,
+        "question": "How can I become an agent?"
+      },
+      {
+        "answer": "We offer three strategies: Low (low risk), Medium (moderate risk) and High (high risk).",
+        "id": 3,
+        "question": "What risk levels are available?"
+      },
+      {
+        "answer": "The program offers recurring commissions for each referred client; details are available in the agents panel.",
+        "id": 4,
+        "question": "How does the affiliate program work?"
+      },
+      {
+        "answer": "Yes, contact support and we will guide you through the deletion process.",
+        "id": 5,
+        "question": "Can I delete my account?"
+      },
+      {
+        "answer": "No. Past performance does not guarantee future results; trading involves risk.",
+        "id": 6,
+        "question": "Are performances guaranteed?"
+      }
+    ],
+    "sectionTitle": "FAQ",
+    "subtitle": "Here you can find answers to your questions"
+  },
+  "it": {
+    "items": [
+      {
+        "answer": "Linearity è una piattaforma di copy trading che permette di replicare le strategie di trader professionisti.",
+        "id": 1,
+        "question": "Cos'è Linearity?"
+      },
+      {
+        "answer": "Puoi candidarti tramite il nostro form di contatto o contattare il supporto Telegram per maggiori informazioni.",
+        "id": 2,
+        "question": "Come posso diventare agente?"
+      },
+      {
+        "answer": "Offriamo tre strategie: Low (basso rischio), Medium (rischio moderato) e High (rischio elevato).",
+        "id": 3,
+        "question": "Quali sono i livelli di rischio disponibili?"
+      },
+      {
+        "answer": "Il programma offre commissioni ricorrenti per ogni cliente referenziato; tutti i dettagli sono disponibili nel pannello agenti.",
+        "id": 4,
+        "question": "Come funziona il programma di affiliazione?"
+      },
+      {
+        "answer": "Sì, contatta il supporto e ti guideremo nella procedura di cancellazione.",
+        "id": 5,
+        "question": "Posso cancellare il mio account?"
+      },
+      {
+        "answer": "No. Le performance passate non garantiscono risultati futuri; il trading comporta rischi.",
+        "id": 6,
+        "question": "Le performance sono garantite?"
+      },
+      {
+        "answer": "Seguire il proprio andamento è semplice! ti basta scaricare l'app MetaTrader 5 (disponibile su iOS e Android) e, accedere con i dati relativi al tuoi conto! Segui questa guida [LINK youtube] [Link PDF]",
+        "id": 7,
+        "question": "Come posso seguire il mio copy trading?"
+      }
+    ],
+    "sectionTitle": "",
+    "subtitle": ""
+  }
+}

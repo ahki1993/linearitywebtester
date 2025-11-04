@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Linearity - Copy Trading Professionale">
+    <meta name="keywords" content="copy trading, forex, trading, investimenti">
+    
+    <!-- Meta Tags Dinamici -->
+    <title id="page-title">Linearity Trading</title>
+    
+    <!-- Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js per i grafici -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Stylesheet principali -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/statistics.css">
+    <link rel="stylesheet" href="css/agents.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/performance-charts.css">
+    <link rel="stylesheet" href="css/strategy-overlay.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body class="theme-dark">
+    
+    <!-- Loader Iniziale -->
+    <div id="page-loader" class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="images/logo-light.png" alt="Linearity" class="logo logo-light">
+                    <img src="images/logo-dark.png" alt="Linearity" class="logo logo-dark">
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link" data-translate="nav_home">Home</a></li>
+                        <li><a href="#strategies" class="nav-link" data-translate="nav_strategies">Strategie</a></li>
+                        <li><a href="#results" class="nav-link" data-translate="nav_results">Risultati</a></li>
+                        <li><a href="#about" class="nav-link" data-translate="nav_about">Il Nostro Progetto</a></li>
+                        <li><a href="#agents" class="nav-link" data-translate="nav_agents">Agenti</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Language Selector -->
+                    <div class="language-selector">
+                        <button class="lang-btn" id="lang-toggle">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">IT</span>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <button class="lang-option" data-lang="it">
+                                <img src="images/flags/it.png" alt="IT" class="flag-icon"> Italiano
+                            </button>
+                            <button class="lang-option" data-lang="en">
+                                <img src="images/flags/en.png" alt="EN" class="flag-icon"> English
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun sun-icon"></i>
+                        <i class="fas fa-moon moon-icon"></i>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <a href="#contact" class="btn btn-primary" data-translate="header_cta">Contattaci</a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-list">
+                <li><a href="#home" class="mobile-nav-link" data-translate="nav_home">Home</a></li>
+                <li><a href="#strategies" class="mobile-nav-link" data-translate="nav_strategies">Strategie</a></li>
+                <li><a href="#results" class="mobile-nav-link" data-translate="nav_results">Risultati</a></li>
+                <li><a href="#about" class="mobile-nav-link" data-translate="nav_about">Il Nostro Progetto</a></li>
+                <li><a href="#agents" class="mobile-nav-link" data-translate="nav_agents">Agenti</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title" data-translate="hero_title">
+                            Trasforma il tuo futuro finanziario
+                        </h1>
+                        <p class="hero-subtitle" data-translate="hero_subtitle">
+                            Copia le strategie dei migliori trader professionisti e ottieni risultati consistenti
+                        </p>
+                        <div class="hero-cta">
+                            <a href="#strategies" class="btn btn-primary btn-large" data-translate="hero_cta_primary">
+                                Scopri le Strategie
+                            </a>
+                            <a href="#results" class="btn btn-secondary btn-large" data-translate="hero_cta_secondary">
+                                Vedi i Risultati
+                            </a>
+                        </div>
+                        
+                        <!-- Stats Preview -->
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-value" id="hero-stat-profit">+127%</div>
+                                <div class="stat-label" data-translate="hero_stat_profit">Profitto Annuale</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="hero-stat-users">2,500+</div>
+                                <div class="stat-label" data-translate="hero_stat_users">Utenti Attivi</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="hero-stat-experience">5+</div>
+                                <div class="stat-label" data-translate="hero_stat_experience">Anni Esperienza</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="trading-card-preview">
+                            <div class="trading-graph"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Background Effects -->
+            <div class="hero-bg-effects">
+                <div class="bg-gradient-1"></div>
+                <div class="bg-gradient-2"></div>
+                <div class="bg-gradient-3"></div>
+            </div>
+        </section>
+
+        <!-- Strategies Carousel Section -->
+        <section class="strategies-section" id="strategies">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-translate="strategies_title">Le Nostre Strategie</h2>
+                    <p class="section-subtitle" data-translate="strategies_subtitle">
+                        Scegli il livello di rischio più adatto alle tue esigenze
+                    </p>
+                </div>
+                
+                <div class="strategies-carousel">
+                    <!-- Carousel Navigation -->
+                    <button class="carousel-nav carousel-prev" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-nav carousel-next" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Carousel Track -->
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carousel-track">
+                            <!-- Le strategie vengono generate dinamicamente da strategies-carousel.js -->
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators">
+                        <button class="indicator active" data-slide="0"></button>
+                        <button class="indicator" data-slide="1"></button>
+                        <button class="indicator" data-slide="2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Section -->
+        <section class="performance-section" id="results">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-translate="performance_title">I Nostri Risultati</h2>
+                    <p class="section-subtitle" data-translate="performance_subtitle">
+                        Dati reali e verificabili delle nostre performance
+                    </p>
+                </div>
+                
+                <!-- Performance Highlights -->
+                <div class="performance-highlights">
+                    <div class="performance-card">
+                        <div class="performance-icon">
+                            <i class="fas fa-calendar-week"></i>
+                        </div>
+                        <h3 class="performance-label" data-translate="performance_week">Questa Settimana</h3>
+                        <div class="performance-value" id="performance-week">+12.4%</div>
+                        <div class="performance-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span data-translate="performance_increase">In aumento</span>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-card featured">
+                        <div class="performance-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="performance-label" data-translate="performance_month">Questo Mese</h3>
+                        <div class="performance-value" id="performance-month">+38.7%</div>
+                        <div class="performance-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span data-translate="performance_increase">In aumento</span>
+                        </div>
+                    </div>
+                    
+                    <div class="performance-card">
+                        <div class="performance-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3 class="performance-label" data-translate="performance_year">Quest'Anno</h3>
+                        <div class="performance-value" id="performance-year">+127.5%</div>
+                        <div class="performance-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span data-translate="performance_increase">In aumento</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- MyFxBook Integration -->
+                <div class="myfxbook-widget">
+                    <h3 class="widget-title" data-translate="myfxbook_title">Statistiche Verificate MyFxBook</h3>
+                    <div class="myfxbook-container" id="myfxbook-widget">
+                        <!-- Il widget MyFxBook verrà caricato qui tramite JavaScript -->
+                        <div class="widget-placeholder">
+                            <i class="fas fa-chart-area"></i>
+                            <p data-translate="myfxbook_loading">Caricamento dati MyFxBook...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="statistics-section">
+            <div class="container">
+                <div class="statistics-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-subscribers">2,547</div>
+                            <div class="stat-description" data-translate="stat_subscribers">Iscritti Attivi</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-profit">$12.4M</div>
+                            <div class="stat-description" data-translate="stat_profit">Profitti Generati</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="total-trades">45,892</div>
+                            <div class="stat-description" data-translate="stat_trades">Trade Eseguiti</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="success-rate">87.3%</div>
+                            <div class="stat-description" data-translate="stat_success">Tasso di Successo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">Il Nostro Progetto</h2>
+                        <p class="about-description">
+                            Linearity è nato dalla passione per il trading e dall'obiettivo di democratizzare l'accesso ai mercati finanziari. 
+                            Offriamo un ecosistema completo di strategie di copy trading, progettate per adattarsi a diversi profili di rischio 
+                            e obiettivi di investimento.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Trading automatico 24/7</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Strategie testate e verificate</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Supporto dedicato</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Trasparenza totale</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-primary about-cta-btn" data-strategy-trigger>Inizia Ora</a>
+                    </div>
+                    <div class="about-visual">
+                        <div class="about-image-container">
+                            <img src="images/about-visual.jpg" alt="Trading" class="about-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agents Section -->
+        <section class="agents-section" id="agents">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Diventa un Agente</h2>
+                    <p class="section-subtitle">
+                        Guadagna promuovendo i nostri servizi di copy trading
+                    </p>
+                </div>
+                
+                <div class="agents-content">
+                    <div class="agents-benefits" id="agents-benefits-container">
+                        <!-- Le benefit cards verranno caricate dinamicamente -->
+                    </div>
+                    
+                    <div class="agents-cta">
+                        <h3>Pronto a iniziare?</h3>
+                        <p>Unisciti al nostro programma agenti oggi stesso</p>
+                        <a href="#contact" class="btn btn-primary btn-large agents-cta-btn">Diventa Agente</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contattaci</h2>
+                    <p class="section-subtitle">
+                        Siamo qui per rispondere a tutte le tue domande
+                    </p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 data-translate="contact_email_label">Email</h4>
+                                <a href="mailto:info@linearity-trading.com">info@linearity-trading.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4 data-translate="contact_phone_label">Telefono</h4>
+                                <a href="tel:+390123456789">+39 012 345 6789</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-telegram"></i>
+                            <div>
+                                <h4 data-translate="contact_telegram_label">Telegram</h4>
+                                <a href="https://t.me/linearitytrading" target="_blank">@linearitytrading</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Messaggio" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="faq-title">FAQ</h2>
+                    <p class="section-subtitle" id="faq-subtitle">Qui puoi trovare risposta alle tue domande</p>
+                </div>
+
+                <div class="faq-content" id="faq-container">
+                    <!-- FAQ items verranno generate dinamicamente -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo-light.png" alt="Linearity" class="logo logo-light">
+                        <img src="images/logo-dark.png" alt="Linearity" class="logo logo-dark">
+                    </div>
+                    <p class="footer-description" data-translate="footer_description">
+                        Il tuo partner di fiducia per il copy trading professionale
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_links_title">Link Rapidi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#strategies" data-translate="footer_link_strategies">Strategie</a></li>
+                        <li><a href="#results" data-translate="footer_link_results">Risultati</a></li>
+                        <li><a href="#about" data-translate="footer_link_about">Chi Siamo</a></li>
+                        <li><a href="#agents" data-translate="footer_link_agents">Programma Agenti</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_legal_title">Legale</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-translate="footer_link_terms">Termini e Condizioni</a></li>
+                        <li><a href="#" data-translate="footer_link_privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="footer_link_cookies">Cookie Policy</a></li>
+                        <li><a href="#" data-translate="footer_link_risk">Informativa Rischi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_newsletter_title">Newsletter</h4>
+                    <p class="footer-newsletter-text" data-translate="footer_newsletter_text">
+                        Iscriviti per ricevere aggiornamenti
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="La tua email" data-translate-placeholder="footer_newsletter_email" required>
+                        <button type="submit" class="btn btn-primary" data-translate="footer_newsletter_submit">Iscriviti</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright" data-translate="footer_copyright">
+                    © 2024 Linearity Trading. Tutti i diritti riservati.
+                </p>
+                <p class="disclaimer" data-translate="footer_disclaimer">
+                    Il trading comporta rischi. Le performance passate non garantiscono risultati futuri.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Strategy Details Modal -->
+    <div class="modal" id="strategy-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="strategy-modal-body">
+                <!-- Contenuto caricato dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config-loader.js"></script>
+    <script src="js/debug.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/strategies-carousel.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/myfxbook.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/agents-benefits.js"></script>
+    <script src="js/agents-section.js"></script>
+    <script src="js/faqs.js"></script>
+    <script src="js/performance-charts.js"></script>
+    <script src="js/contact-section.js"></script>
+    <script src="js/about-section.js"></script>
+    <script src="js/hero-section.js"></script>
+    <script src="js/strategy-overlay.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

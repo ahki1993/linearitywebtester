@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pannello di Controllo - Linearity</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="header-content">
+            <h1><i class="fas fa-cog"></i> Pannello di Controllo Linearity</h1>
+            <div class="header-actions">
+                <button class="btn-icon" id="save-all-btn" title="Salva Tutto">
+                    <i class="fas fa-save"></i>
+                </button>
+                <button class="btn-icon" id="preview-btn" title="Anteprima Sito">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="admin-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <nav class="admin-nav">
+                <button class="nav-item active" data-section="general">
+                    <i class="fas fa-home"></i>
+                    <span>Generale</span>
+                </button>
+                <button class="nav-item" data-section="translations">
+                    <i class="fas fa-language"></i>
+                    <span>Traduzioni</span>
+                </button>
+                <button class="nav-item" data-section="theme">
+                    <i class="fas fa-palette"></i>
+                    <span>Temi e Colori</span>
+                </button>
+                
+                <!-- Pannello Strategie con sottosezioni -->
+                <button class="nav-item nav-parent" data-section="strategies-panel">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Pannello Strategie</span>
+                    <i class="fas fa-chevron-down nav-arrow"></i>
+                </button>
+                <div class="nav-submenu">
+                    <button class="nav-item nav-child" data-section="strategies">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Strategie</span>
+                    </button>
+                    <button class="nav-item nav-child" data-section="strategy-cards">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Strategy Cards</span>
+                    </button>
+                </div>
+                
+                <button class="nav-item" data-section="charts">
+                    <i class="fas fa-chart-area"></i>
+                    <span>Grafici Performance</span>
+                </button>
+                <button class="nav-item" data-section="faq">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </button>
+                <button class="nav-item" data-section="performance">
+                    <i class="fas fa-trophy"></i>
+                    <span>Performance</span>
+                </button>
+                <button class="nav-item" data-section="hero">
+                    <i class="fas fa-star"></i>
+                    <span>Hero</span>
+                </button>
+                <button class="nav-item" data-section="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </button>
+                <button class="nav-item" data-section="agents">
+                    <i class="fas fa-users"></i>
+                    <span>Benefit Agenti</span>
+                </button>
+                <button class="nav-item" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contatti</span>
+                </button>
+                <button class="nav-item" data-section="images">
+                    <i class="fas fa-image"></i>
+                    <span>Immagini</span>
+                </button>
+                <button class="nav-item" data-section="myfxbook">
+                    <i class="fas fa-chart-area"></i>
+                    <span>MyFxBook</span>
+                </button>
+                <button class="nav-item" data-section="debug">
+                    <i class="fas fa-bug"></i>
+                    <span>Debug</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-content">
+            
+            <!-- Notification Area -->
+            <div class="notification-area" id="notification-area"></div>
+
+            <!-- General Section -->
+            <section class="admin-section active" id="section-general">
+                <h2 class="section-title">Impostazioni Generali</h2>
+                
+                <div class="card">
+                    <h3>Informazioni Sito</h3>
+                    <div class="form-group">
+                        <label for="site-title">Titolo Sito</label>
+                        <input type="text" id="site-title" class="form-control" placeholder="Linearity Trading">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-description">Descrizione</label>
+                        <textarea id="site-description" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="site-keywords">Keywords (separate da virgola)</label>
+                        <input type="text" id="site-keywords" class="form-control">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Contatti</h3>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone">Telefono</label>
+                        <input type="tel" id="contact-phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-telegram">Telegram</label>
+                        <input type="text" id="contact-telegram" class="form-control">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Social Media</h3>
+                    <div class="form-group">
+                        <label for="social-facebook">Facebook URL</label>
+                        <input type="url" id="social-facebook" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="social-twitter">Twitter URL</label>
+                        <input type="url" id="social-twitter" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="social-instagram">Instagram URL</label>
+                        <input type="url" id="social-instagram" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="social-linkedin">LinkedIn URL</label>
+                        <input type="url" id="social-linkedin" class="form-control">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('general')">
+                    <i class="fas fa-save"></i> Salva Impostazioni Generali
+                </button>
+            </section>
+
+            <!-- Translations Section -->
+            <section class="admin-section" id="section-translations">
+                <h2 class="section-title">Gestione Traduzioni</h2>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-lang="it">
+                        <img src="../images/flags/it.png" alt="IT" class="flag-icon"> Italiano
+                    </button>
+                    <button class="tab-btn" data-lang="en">
+                        <img src="../images/flags/en.png" alt="EN" class="flag-icon"> English
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="translation-search" placeholder="Cerca traduzione..." class="form-control">
+                    </div>
+                    
+                    <div class="translation-editor" id="translation-editor">
+                        <!-- Generato dinamicamente tramite JavaScript -->
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('translations')">
+                    <i class="fas fa-save"></i> Salva Traduzioni
+                </button>
+            </section>
+
+            <!-- Performance Charts Section -->
+            <section class="admin-section" id="section-charts">
+                <h2 class="section-title">Gestione Grafici Performance</h2>
+                
+                <div class="card">
+                    <h3>Impostazioni Generali</h3>
+                    <div class="form-group">
+                        <label>Numero grafici visibili (1-3)</label>
+                        <select id="charts-visible-count" class="form-control">
+                            <option value="1">1 Grafico</option>
+                            <option value="2">2 Grafici</option>
+                            <option value="3">3 Grafici</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="charts-auto-rotate" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                            <span>Auto-rotate grafici</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Intervallo rotazione (ms)</label>
+                        <input type="number" id="charts-rotation-interval" class="form-control" value="5000" min="2000" step="1000">
+                    </div>
+                </div>
+
+                <div class="strategy-tabs">
+                    <button class="tab-btn active" data-chart-id="1">Grafico 1</button>
+                    <button class="tab-btn" data-chart-id="2">Grafico 2</button>
+                    <button class="tab-btn" data-chart-id="3">Grafico 3</button>
+                </div>
+
+                <div id="chart-editor-container">
+                    <!-- Contenuto caricato dinamicamente -->
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('charts')">
+                    <i class="fas fa-save"></i> Salva Grafici
+                </button>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="admin-section" id="section-theme">
+                <h2 class="section-title">Temi e Colori</h2>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-theme="dark">
+                        <i class="fas fa-moon"></i> Tema Scuro
+                    </button>
+                    <button class="tab-btn" data-theme="light">
+                        <i class="fas fa-sun"></i> Tema Chiaro
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h3>Colori Principali</h3>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <label>Colore Primario</label>
+                            <input type="color" class="color-picker" data-var="primary-color">
+                            <input type="text" class="color-value form-control" placeholder="#C8A25E">
+                        </div>
+                        <div class="color-item">
+                            <label>Colore Secondario</label>
+                            <input type="color" class="color-picker" data-var="secondary-color">
+                            <input type="text" class="color-value form-control" placeholder="#8B7355">
+                        </div>
+                        <div class="color-item">
+                            <label>Colore Accento</label>
+                            <input type="color" class="color-picker" data-var="accent-color">
+                            <input type="text" class="color-value form-control" placeholder="#D4AF37">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Colori Sfondo</h3>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <label>Sfondo Principale</label>
+                            <input type="color" class="color-picker" data-var="bg-primary">
+                            <input type="text" class="color-value form-control">
+                        </div>
+                        <div class="color-item">
+                            <label>Sfondo Secondario</label>
+                            <input type="color" class="color-picker" data-var="bg-secondary">
+                            <input type="text" class="color-value form-control">
+                        </div>
+                        <div class="color-item">
+                            <label>Sfondo Card</label>
+                            <input type="color" class="color-picker" data-var="bg-card">
+                            <input type="text" class="color-value form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Colori Testo</h3>
+                    <div class="color-grid">
+                        <div class="color-item">
+                            <label>Testo Primario</label>
+                            <input type="color" class="color-picker" data-var="text-primary">
+                            <input type="text" class="color-value form-control">
+                        </div>
+                        <div class="color-item">
+                            <label>Testo Secondario</label>
+                            <input type="color" class="color-picker" data-var="text-secondary">
+                            <input type="text" class="color-value form-control">
+                        </div>
+                        <div class="color-item">
+                            <label>Testo Muted</label>
+                            <input type="color" class="color-picker" data-var="text-muted">
+                            <input type="text" class="color-value form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Gradienti</h3>
+                    <div class="form-group">
+                        <label>Gradiente 1 (Inizio)</label>
+                        <input type="color" class="color-picker" data-var="gradient-1-start">
+                    </div>
+                    <div class="form-group">
+                        <label>Gradiente 1 (Fine)</label>
+                        <input type="color" class="color-picker" data-var="gradient-1-end">
+                    </div>
+                    <div class="gradient-preview" id="gradient-preview-1"></div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('theme')">
+                    <i class="fas fa-save"></i> Salva Tema
+                </button>
+            </section>
+
+            <!-- Strategies Section -->
+            <section class="admin-section" id="section-strategies">
+                <h2 class="section-title">Gestione Strategie</h2>
+                
+                <div class="strategy-tabs">
+                    <button class="tab-btn active" data-strategy="low">Low Risk</button>
+                    <button class="tab-btn" data-strategy="medium">Medium Risk</button>
+                    <button class="tab-btn" data-strategy="high">High Risk</button>
+                </div>
+
+                <div class="card" id="strategy-editor">
+                    <h3 style="margin-bottom: 20px; color: #C8A25E;">
+                        <i class="fas fa-info-circle"></i> Informazioni Strategia
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label>Nome Strategia (IT)</label>
+                        <input type="text" class="form-control" data-field="name-it" placeholder="Low Risk">
+                    </div>
+                    <div class="form-group">
+                        <label>Nome Strategia (EN)</label>
+                        <input type="text" class="form-control" data-field="name-en" placeholder="Low Risk">
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #C8A25E;">
+                        <i class="fas fa-paint-brush"></i> Stile Titolo nell'Overlay
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label>Dimensione Font Titolo</label>
+                        <select class="form-control" data-field="title-font-size">
+                            <option value="24px">Piccolo (24px)</option>
+                            <option value="28px">Normale (28px)</option>
+                            <option value="32px" selected>Grande (32px)</option>
+                            <option value="36px">Extra Grande (36px)</option>
+                            <option value="40px">Molto Grande (40px)</option>
+                            <option value="48px">Enorme (48px)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Allineamento Titolo</label>
+                        <div class="btn-group-toggle" style="display: flex; gap: 10px;">
+                            <button type="button" class="btn btn-outline alignment-btn" data-field="title-align" data-value="left">
+                                <i class="fas fa-align-left"></i> Sinistra
+                            </button>
+                            <button type="button" class="btn btn-outline alignment-btn active" data-field="title-align" data-value="center">
+                                <i class="fas fa-align-center"></i> Centro
+                            </button>
+                            <button type="button" class="btn btn-outline alignment-btn" data-field="title-align" data-value="right">
+                                <i class="fas fa-align-right"></i> Destra
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Stile Testo Titolo</label>
+                        <div class="btn-group-toggle" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button type="button" class="btn btn-outline style-btn" data-field="title-bold" data-value="true">
+                                <i class="fas fa-bold"></i> Grassetto
+                            </button>
+                            <button type="button" class="btn btn-outline style-btn" data-field="title-italic" data-value="true">
+                                <i class="fas fa-italic"></i> Corsivo
+                            </button>
+                            <button type="button" class="btn btn-outline style-btn" data-field="title-underline" data-value="true">
+                                <i class="fas fa-underline"></i> Sottolineato
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Spazio tra Titolo e Descrizione</label>
+                        <select class="form-control" data-field="title-margin-bottom">
+                            <option value="10px">Molto Stretto (10px)</option>
+                            <option value="20px">Stretto (20px)</option>
+                            <option value="30px" selected>Normale (30px)</option>
+                            <option value="40px">Largo (40px)</option>
+                            <option value="50px">Molto Largo (50px)</option>
+                            <option value="60px">Extra Largo (60px)</option>
+                        </select>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #C8A25E;">
+                        <i class="fas fa-chart-bar"></i> Statistiche Visibili nel Carousel
+                    </h3>
+                    
+                    <div class="form-group">
+                        <label>Tagline / Sottotitolo (IT)</label>
+                        <input type="text" class="form-control" data-field="tagline-it" placeholder="Crescita stabile e sicura">
+                        <small class="form-text">Breve descrizione visualizzata nel carousel</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Tagline / Sottotitolo (EN)</label>
+                        <input type="text" class="form-control" data-field="tagline-en" placeholder="Stable and secure growth">
+                        <small class="form-text">Short description displayed in carousel</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Livello di Rischio (IT)</label>
+                        <input type="text" class="form-control" data-field="risk-label-it" placeholder="Basso / Medio / Alto">
+                        <small class="form-text">Questo è il testo visualizzato come "Rischio: Basso"</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Livello di Rischio (EN)</label>
+                        <input type="text" class="form-control" data-field="risk-label-en" placeholder="Low / Medium / High">
+                        <small class="form-text">This is the text displayed as "Risk: Low"</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Rendimento Mensile</label>
+                        <input type="text" class="form-control" data-field="return" placeholder="3-5% / mese">
+                        <small class="form-text">Es: 3-5% / mese, +8%, 15-25%</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Drawdown Massimo</label>
+                        <input type="text" class="form-control" data-field="drawdown" placeholder="< 10%">
+                        <small class="form-text">Es: < 10%, 10-20%, 20-30%</small>
+                    </div>
+                    
+                    <h3 style="margin: 30px 0 20px; color: #C8A25E;">
+                        <i class="fas fa-file-alt"></i> Descrizione Completa (visualizzata nell'Overlay)
+                    </h3>
+                    
+                    <!-- Rich Text Editor per Descrizione IT -->
+                    <div class="form-group">
+                        <label>Descrizione Dettagliata (IT)</label>
+                        <div class="rich-text-toolbar" data-target="description-it">
+                            <select class="toolbar-select" data-command="fontSize" title="Dimensione testo">
+                                <option value="">Dimensione</option>
+                                <option value="1">Molto piccolo</option>
+                                <option value="2">Piccolo</option>
+                                <option value="3">Normale</option>
+                                <option value="4">Grande</option>
+                                <option value="5">Molto grande</option>
+                                <option value="6">Enorme</option>
+                                <option value="7">Gigante</option>
+                            </select>
+                            <select class="toolbar-select" data-command="lineHeight" title="Interlinea">
+                                <option value="">Interlinea</option>
+                                <option value="1">Compatta (1.0)</option>
+                                <option value="1.15">Stretta (1.15)</option>
+                                <option value="1.5">Normale (1.5)</option>
+                                <option value="1.8">Ampia (1.8)</option>
+                                <option value="2">Doppia (2.0)</option>
+                                <option value="2.5">Tripla (2.5)</option>
+                            </select>
+                            <span class="toolbar-separator"></span>
+                            <button type="button" class="toolbar-btn" data-command="bold" title="Grassetto">
+                                <i class="fas fa-bold"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="italic" title="Corsivo">
+                                <i class="fas fa-italic"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="underline" title="Sottolineato">
+                                <i class="fas fa-underline"></i>
+                            </button>
+                            <span class="toolbar-separator"></span>
+                            <button type="button" class="toolbar-btn list-btn" data-command="insertUnorderedList" title="Elenco puntato">
+                                <i class="fas fa-list-ul"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn list-btn" data-command="insertOrderedList" title="Elenco numerato">
+                                <i class="fas fa-list-ol"></i>
+                            </button>
+                            <span class="toolbar-separator"></span>
+                            <button type="button" class="toolbar-btn" data-command="justifyLeft" title="Allinea a sinistra">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="justifyCenter" title="Allinea al centro">
+                                <i class="fas fa-align-center"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="justifyRight" title="Allinea a destra">
+                                <i class="fas fa-align-right"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="justifyFull" title="Giustificato">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+                        <div class="rich-text-editor" 
+                             id="strategy-description-it" 
+                             contenteditable="true" 
+                             data-field="description-it"></div>
+                    </div>
+                    
+                    <!-- Rich Text Editor per Descrizione EN -->
+                    <div class="form-group">
+                        <label>Descrizione Dettagliata (EN)</label>
+                        <div class="rich-text-toolbar" data-target="description-en">
+                            <select class="toolbar-select" data-command="fontSize" title="Font size">
+                                <option value="">Size</option>
+                                <option value="1">Very small</option>
+                                <option value="2">Small</option>
+                                <option value="3">Normal</option>
+                                <option value="4">Large</option>
+                                <option value="5">Very large</option>
+                                <option value="6">Huge</option>
+                                <option value="7">Giant</option>
+                            </select>
+                            <select class="toolbar-select" data-command="lineHeight" title="Line height">
+                                <option value="">Line height</option>
+                                <option value="1">Compact (1.0)</option>
+                                <option value="1.15">Tight (1.15)</option>
+                                <option value="1.5">Normal (1.5)</option>
+                                <option value="1.8">Wide (1.8)</option>
+                                <option value="2">Double (2.0)</option>
+                                <option value="2.5">Triple (2.5)</option>
+                            </select>
+                            <span class="toolbar-separator"></span>
+                            <button type="button" class="toolbar-btn" data-command="bold" title="Bold">
+                                <i class="fas fa-bold"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="italic" title="Italic">
+                                <i class="fas fa-italic"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="underline" title="Underline">
+                                <i class="fas fa-underline"></i>
+                            </button>
+                            <span class="toolbar-separator"></span>
+                            <button type="button" class="toolbar-btn list-btn" data-command="insertUnorderedList" title="Bullet list">
+                                <i class="fas fa-list-ul"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn list-btn" data-command="insertOrderedList" title="Numbered list">
+                                <i class="fas fa-list-ol"></i>
+                            </button>
+                            <span class="toolbar-separator"></span>
+                            <button type="button" class="toolbar-btn" data-command="justifyLeft" title="Align left">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="justifyCenter" title="Align center">
+                                <i class="fas fa-align-center"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="justifyRight" title="Align right">
+                                <i class="fas fa-align-right"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="justifyFull" title="Justify">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+                        <div class="rich-text-editor" 
+                             id="strategy-description-en" 
+                             contenteditable="true" 
+                             data-field="description-en"></div>
+                    </div>
+                </div>
+
+                <!-- Attachments Section -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0; color: #C8A25E;">
+                                <i class="fas fa-paperclip"></i> Allegati e Documenti
+                            </h3>
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                File PDF e immagini scaricabili dagli utenti
+                            </p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="strategy-attachments-enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div id="strategy-attachments-container">
+                        <!-- Title Section Style -->
+                        <div class="form-group">
+                            <label>Titolo Sezione Allegati (IT)</label>
+                            <input type="text" class="form-control" data-field="attachments-title-it" placeholder="Documenti e Allegati">
+                        </div>
+                        <div class="form-group">
+                            <label>Titolo Sezione Allegati (EN)</label>
+                            <input type="text" class="form-control" data-field="attachments-title-en" placeholder="Documents and Attachments">
+                        </div>
+
+                        <h4 style="margin: 20px 0 15px; color: #666;">Stile Titolo Sezione</h4>
+                        <div class="form-row">
+                            <div class="form-group" style="width: 150px;">
+                                <label>Font Size</label>
+                                <select class="form-control" data-field="attachments-title-fontsize">
+                                    <option value="18px">18px</option>
+                                    <option value="20px">20px</option>
+                                    <option value="22px">22px</option>
+                                    <option value="24px" selected>24px</option>
+                                    <option value="26px">26px</option>
+                                    <option value="28px">28px</option>
+                                    <option value="30px">30px</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Stili Testo</label>
+                                <div class="button-group">
+                                    <button type="button" class="style-btn active" data-field="attachments-title-bold">
+                                        <i class="fas fa-bold"></i>
+                                    </button>
+                                    <button type="button" class="style-btn" data-field="attachments-title-italic">
+                                        <i class="fas fa-italic"></i>
+                                    </button>
+                                    <button type="button" class="style-btn" data-field="attachments-title-underline">
+                                        <i class="fas fa-underline"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Allineamento</label>
+                                <div class="button-group">
+                                    <button type="button" class="alignment-btn active" data-field="attachments-title-align" data-value="left">
+                                        <i class="fas fa-align-left"></i>
+                                    </button>
+                                    <button type="button" class="alignment-btn" data-field="attachments-title-align" data-value="center">
+                                        <i class="fas fa-align-center"></i>
+                                    </button>
+                                    <button type="button" class="alignment-btn" data-field="attachments-title-align" data-value="right">
+                                        <i class="fas fa-align-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group" style="width: 150px;">
+                                <label>Margin Bottom (px)</label>
+                                <input type="number" class="form-control" data-field="attachments-title-margin" value="15" min="0" max="50">
+                            </div>
+                        </div>
+
+                        <!-- Files List -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 25px 0 15px;">
+                            <p style="margin: 0; color: var(--text-secondary);">File Allegati</p>
+                            <button class="btn btn-success" onclick="addStrategyAttachment()" id="add-attachment-btn">
+                                <i class="fas fa-plus"></i> Aggiungi File
+                            </button>
+                        </div>
+                        <div id="strategy-attachments-list" class="strategy-attachments-list">
+                            <!-- I file allegati verranno caricati dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('strategies')">
+                    <i class="fas fa-save"></i> Salva Strategie
+                </button>
+            </section>
+
+            <!-- Performance Section -->
+            <section class="admin-section" id="section-faq">
+                <h2 class="section-title">Gestione FAQ</h2>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-lang="it">
+                        <img src="../images/flags/it.png" alt="IT" class="flag-icon"> Italiano
+                    </button>
+                    <button class="tab-btn" data-lang="en">
+                        <img src="../images/flags/en.png" alt="EN" class="flag-icon"> English
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div id="faq-editor">
+                        <div class="form-group">
+                            <label>Titolo Sezione</label>
+                            <input type="text" id="faq-section-title" class="form-control" placeholder="FAQ">
+                        </div>
+                        <div class="form-group">
+                            <label>Sottotitolo</label>
+                            <input type="text" id="faq-section-subtitle" class="form-control" placeholder="Qui puoi trovare risposta alle tue domande">
+                        </div>
+
+                        <div class="card">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
+                                <p style="margin:0; color:var(--text-secondary);">Gestisci le FAQ (max 10)</p>
+                                <button class="btn btn-success" onclick="addFAQItem()" id="add-faq-btn"><i class="fas fa-plus"></i> Aggiungi Domanda</button>
+                            </div>
+                            <div id="faq-items-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('faq')">
+                    <i class="fas fa-save"></i> Salva FAQ
+                </button>
+            </section>
+
+            <!-- Strategy Cards Section -->
+            <section class="admin-section" id="section-strategy-cards">
+                <h2 class="section-title">Gestione Strategy Cards Overlay</h2>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-lang="it">
+                        <img src="../images/flags/it.png" alt="IT" class="flag-icon"> Italiano
+                    </button>
+                    <button class="tab-btn" data-lang="en">
+                        <img src="../images/flags/en.png" alt="EN" class="flag-icon"> English
+                    </button>
+                </div>
+
+                <div class="card">
+                    <div id="strategy-cards-editor">
+                        <div class="form-group">
+                            <label>Titolo Overlay</label>
+                            <input type="text" id="strategy-overlay-title" class="form-control" 
+                                   placeholder="Quale strategia vuoi scegliere?">
+                        </div>
+
+                        <div class="card">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 15px;">
+                                <p style="margin:0; color:var(--text-secondary);">Gestisci le Strategy Cards (max 5)</p>
+                                <button class="btn btn-success" onclick="addStrategyCard()" id="add-strategy-card-btn">
+                                    <i class="fas fa-plus"></i> Aggiungi Card
+                                </button>
+                            </div>
+                            <div id="strategy-cards-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('strategy-cards')">
+                    <i class="fas fa-save"></i> Salva Strategy Cards
+                </button>
+            </section>
+
+            <section class="admin-section" id="section-performance">
+                <h2 class="section-title">Gestione Performance</h2>
+                
+                <div class="card">
+                    <h3>Performance Correnti</h3>
+                    <div class="form-group">
+                        <label>Performance Settimanale (%)</label>
+                        <input type="number" step="0.1" class="form-control" id="perf-week">
+                    </div>
+                    <div class="form-group">
+                        <label>Performance Mensile (%)</label>
+                        <input type="number" step="0.1" class="form-control" id="perf-month">
+                    </div>
+                    <div class="form-group">
+                        <label>Performance Annuale (%)</label>
+                        <input type="number" step="0.1" class="form-control" id="perf-year">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Statistiche Generali</h3>
+                    <div class="form-group">
+                        <label>Numero Iscritti</label>
+                        <input type="number" class="form-control" id="stat-subscribers">
+                    </div>
+                    <div class="form-group">
+                        <label>Profitti Totali Generati</label>
+                        <input type="text" class="form-control" id="stat-profit" placeholder="$12.4M">
+                    </div>
+                    <div class="form-group">
+                        <label>Trade Eseguiti</label>
+                        <input type="number" class="form-control" id="stat-trades">
+                    </div>
+                    <div class="form-group">
+                        <label>Tasso di Successo (%)</label>
+                        <input type="number" step="0.1" class="form-control" id="stat-success">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('performance')">
+                    <i class="fas fa-save"></i> Salva Performance
+                </button>
+            </section>
+
+            <!-- Hero Section -->
+            <section class="admin-section" id="section-hero">
+                <h2 class="section-title">Gestione Sezione Hero</h2>
+                
+                <!-- Titolo -->
+                <div class="card">
+                    <h3>Titolo Principale</h3>
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Titolo (IT)</label>
+                            <input type="text" class="form-control" data-field="hero-title-it" placeholder="Benvenuto su Linearity">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Titolo (EN)</label>
+                            <input type="text" class="form-control" data-field="hero-title-en" placeholder="Welcome to Linearity">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Font Size (px)</label>
+                            <select class="form-control" data-field="hero-title-font-size">
+                                <option value="32">32</option>
+                                <option value="36">36</option>
+                                <option value="40">40</option>
+                                <option value="44">44</option>
+                                <option value="48" selected>48</option>
+                                <option value="52">52</option>
+                                <option value="56">56</option>
+                                <option value="60">60</option>
+                                <option value="64">64</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stile</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn active" data-field="hero-title-bold" title="Grassetto">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="hero-title-italic" title="Corsivo">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="hero-title-underline" title="Sottolineato">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Allineamento</label>
+                            <div class="button-group">
+                                <button type="button" class="alignment-btn" data-field="hero-title-align" data-value="left" title="Sinistra">
+                                    <i class="fas fa-align-left"></i>
+                                </button>
+                                <button type="button" class="alignment-btn active" data-field="hero-title-align" data-value="center" title="Centro">
+                                    <i class="fas fa-align-center"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="hero-title-align" data-value="right" title="Destra">
+                                    <i class="fas fa-align-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Interlinea (%)</label>
+                            <input type="number" class="form-control" data-field="hero-title-lineheight" value="110" min="80" max="200">
+                        </div>
+                        <div class="form-group" style="width: 120px;">
+                            <label>Spazio sotto (px)</label>
+                            <input type="number" class="form-control" data-field="hero-title-margin-bottom" value="20" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sottotitolo -->
+                <div class="card">
+                    <h3>Sottotitolo</h3>
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Sottotitolo (IT)</label>
+                            <input type="text" class="form-control" data-field="hero-subtitle-it" placeholder="Strategie di trading progettate per te">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Sottotitolo (EN)</label>
+                            <input type="text" class="form-control" data-field="hero-subtitle-en" placeholder="Trading strategies built for you">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Font Size (px)</label>
+                            <select class="form-control" data-field="hero-subtitle-font-size">
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                                <option value="18">18</option>
+                                <option value="20" selected>20</option>
+                                <option value="22">22</option>
+                                <option value="24">24</option>
+                                <option value="28">28</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stile</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="hero-subtitle-bold" title="Grassetto">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="hero-subtitle-italic" title="Corsivo">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="hero-subtitle-underline" title="Sottolineato">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Allineamento</label>
+                            <div class="button-group">
+                                <button type="button" class="alignment-btn" data-field="hero-subtitle-align" data-value="left" title="Sinistra">
+                                    <i class="fas fa-align-left"></i>
+                                </button>
+                                <button type="button" class="alignment-btn active" data-field="hero-subtitle-align" data-value="center" title="Centro">
+                                    <i class="fas fa-align-center"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="hero-subtitle-align" data-value="right" title="Destra">
+                                    <i class="fas fa-align-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Interlinea (%)</label>
+                            <input type="number" class="form-control" data-field="hero-subtitle-lineheight" value="140" min="80" max="200">
+                        </div>
+                        <div class="form-group" style="width: 120px;">
+                            <label>Spazio sopra (px)</label>
+                            <input type="number" class="form-control" data-field="hero-subtitle-margin-top" value="10" min="0" max="100">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Stats -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0;">Hero Stats</h3>
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                Statistiche mostrate nella sezione hero (massimo 4)
+                            </p>
+                        </div>
+                        <button class="btn btn-success" onclick="addHeroStat()" id="add-hero-stat-btn">
+                            <i class="fas fa-plus"></i> Aggiungi Stat
+                        </button>
+                    </div>
+                    
+                    <div class="form-row" style="margin-bottom: 20px; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">
+                                <i class="fas fa-hashtag"></i> Stile Numeri (stat-value)
+                            </label>
+                            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                <div style="flex: 0 0 140px;">
+                                    <label style="font-size: 0.85rem;">Dimensione (px)</label>
+                                    <select class="form-control" data-field="hero-stats-number-size">
+                                        <option value="10">10</option>
+                                        <option value="12">12</option>
+                                        <option value="14">14</option>
+                                        <option value="16">16</option>
+                                        <option value="18">18</option>
+                                        <option value="20">20</option>
+                                        <option value="22">22</option>
+                                        <option value="24" selected>24</option>
+                                        <option value="28">28</option>
+                                        <option value="30">30 (default CSS)</option>
+                                        <option value="32">32</option>
+                                        <option value="36">36</option>
+                                        <option value="40">40</option>
+                                        <option value="44">44</option>
+                                        <option value="48">48</option>
+                                        <option value="52">52</option>
+                                        <option value="56">56</option>
+                                    </select>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label style="font-size: 0.85rem;">Stile Testo</label>
+                                    <div class="button-group">
+                                        <button type="button" class="style-btn active" data-field="hero-stats-number-bold" title="Grassetto">
+                                            <i class="fas fa-bold"></i>
+                                        </button>
+                                        <button type="button" class="style-btn" data-field="hero-stats-number-italic" title="Corsivo">
+                                            <i class="fas fa-italic"></i>
+                                        </button>
+                                        <button type="button" class="style-btn" data-field="hero-stats-number-underline" title="Sottolineato">
+                                            <i class="fas fa-underline"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row" style="margin-bottom: 20px; padding: 1rem; background: #fff3e0; border-radius: 8px; border-left: 4px solid #C8A25E;">
+                        <div class="form-group" style="flex: 1;">
+                            <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">
+                                <i class="fas fa-tag"></i> Stile Label (stat-label)
+                            </label>
+                            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                <div style="flex: 0 0 140px;">
+                                    <label style="font-size: 0.85rem;">Dimensione (px)</label>
+                                    <select class="form-control" data-field="hero-stats-label-size">
+                                        <option value="10">10</option>
+                                        <option value="12">12</option>
+                                        <option value="14" selected>14 (default)</option>
+                                        <option value="16">16</option>
+                                        <option value="18">18</option>
+                                        <option value="20">20</option>
+                                        <option value="22">22</option>
+                                        <option value="24">24</option>
+                                    </select>
+                                </div>
+                                <div style="flex: 1;">
+                                    <label style="font-size: 0.85rem;">Stile Testo</label>
+                                    <div class="button-group">
+                                        <button type="button" class="style-btn" data-field="hero-stats-label-bold" title="Grassetto">
+                                            <i class="fas fa-bold"></i>
+                                        </button>
+                                        <button type="button" class="style-btn" data-field="hero-stats-label-italic" title="Corsivo">
+                                            <i class="fas fa-italic"></i>
+                                        </button>
+                                        <button type="button" class="style-btn" data-field="hero-stats-label-underline" title="Sottolineato">
+                                            <i class="fas fa-underline"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row" style="margin-bottom: 20px; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                        <div class="form-group" style="width: 150px;">
+                            <label>Spazio tra Stats (px)</label>
+                            <input type="number" class="form-control" data-field="hero-stats-gap" value="24" min="0" max="100" step="4" placeholder="24 (default)">
+                        </div>
+                        <div class="form-group">
+                            <label>Layout</label>
+                            <select class="form-control" data-field="hero-stats-layout">
+                                <option value="grid" selected>Griglia (3 colonne)</option>
+                                <option value="horizontal">Orizzontale</option>
+                                <option value="vertical">Verticale</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="hero-stats-list" class="hero-stats-list">
+                        <!-- Le stats verranno caricate dinamicamente -->
+                    </div>
+                </div>
+                
+                <!-- Visual Settings -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0;">Elemento Visuale</h3>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="hero-visual-enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div id="hero-visual-settings">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Posizione</label>
+                                <select class="form-control" data-field="hero-visual-position">
+                                    <option value="left">Sinistra</option>
+                                    <option value="right" selected>Destra</option>
+                                    <option value="top">Sopra</option>
+                                    <option value="bottom">Sotto</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" id="hero-visual-integrate-editor" checked>
+                                    <span>Integra Performance Editor</span>
+                                </label>
+                                <small class="form-text">Mostra l'editor dei grafici performance nella hero</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0;">Pulsanti Call-to-Action</h3>
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                Gestisci i pulsanti CTA visualizzati nella hero section
+                            </p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="hero-cta-enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div id="hero-cta-settings">
+                        <div class="form-row" style="margin-bottom: 20px; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div class="form-group">
+                                <label>Allineamento Pulsanti</label>
+                                <div class="button-group">
+                                    <button type="button" class="alignment-btn" data-field="hero-cta-align" data-value="left" title="Sinistra">
+                                        <i class="fas fa-align-left"></i>
+                                    </button>
+                                    <button type="button" class="alignment-btn active" data-field="hero-cta-align" data-value="center" title="Centro">
+                                        <i class="fas fa-align-center"></i>
+                                    </button>
+                                    <button type="button" class="alignment-btn" data-field="hero-cta-align" data-value="right" title="Destra">
+                                        <i class="fas fa-align-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group" style="width: 150px;">
+                                <label>Spazio tra Pulsanti (px)</label>
+                                <input type="number" class="form-control" data-field="hero-cta-gap" value="16" min="0" max="50" step="4">
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <p style="margin: 0; color: var(--text-secondary);">Pulsanti CTA (massimo 3)</p>
+                            <button class="btn btn-success" onclick="addHeroCTA()" id="add-hero-cta-btn">
+                                <i class="fas fa-plus"></i> Aggiungi Pulsante
+                            </button>
+                        </div>
+                        
+                        <div id="hero-cta-buttons-list" class="hero-cta-buttons-list">
+                            <!-- I pulsanti CTA verranno caricati dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="saveHeroSettings()">
+                    <i class="fas fa-save"></i> Salva Impostazioni Hero
+                </button>
+            </section>
+
+            <!-- About Section -->
+            <section class="admin-section" id="section-about">
+                <h2 class="section-title">Gestione Sezione About</h2>
+                
+                <!-- Titolo -->
+                <div class="card">
+                    <h3>Titolo</h3>
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Titolo (IT)</label>
+                            <input type="text" class="form-control" data-field="about-title-it" placeholder="Il Nostro Progetto">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Titolo (EN)</label>
+                            <input type="text" class="form-control" data-field="about-title-en" placeholder="Our Project">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Font Size</label>
+                            <select class="form-control" data-field="about-title-font-size">
+                                <option value="24">24px</option>
+                                <option value="28">28px</option>
+                                <option value="32">32px</option>
+                                <option value="36" selected>36px</option>
+                                <option value="40">40px</option>
+                                <option value="48">48px</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stile</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="about-title-bold" title="Grassetto">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="about-title-italic" title="Corsivo">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="about-title-underline" title="Sottolineato">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Allineamento</label>
+                            <div class="button-group">
+                                <button type="button" class="alignment-btn" data-field="about-title-align" data-value="left" title="Sinistra">
+                                    <i class="fas fa-align-left"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="about-title-align" data-value="center" title="Centro">
+                                    <i class="fas fa-align-center"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="about-title-align" data-value="right" title="Destra">
+                                    <i class="fas fa-align-right"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="about-title-align" data-value="justify" title="Giustificato">
+                                    <i class="fas fa-align-justify"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Distanza da Descrizione (px)</label>
+                            <input type="number" class="form-control" data-field="about-title-margin-bottom" value="20" min="0" max="100" style="width: 120px;">
+                            <small class="form-text">Spazio tra titolo e descrizione</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Descrizione -->
+                <div class="card">
+                    <h3>Descrizione</h3>
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Descrizione (IT)</label>
+                            <textarea class="form-control" data-field="about-desc-it" rows="4" placeholder="Linearity è nato dalla passione..."></textarea>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Descrizione (EN)</label>
+                            <textarea class="form-control" data-field="about-desc-en" rows="4" placeholder="Linearity was born..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Font Size</label>
+                            <select class="form-control" data-field="about-desc-font-size">
+                                <option value="14">14px</option>
+                                <option value="16">16px</option>
+                                <option value="18" selected>18px</option>
+                                <option value="20">20px</option>
+                                <option value="24">24px</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stile</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="about-desc-bold">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="about-desc-italic">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="about-desc-underline">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Allineamento</label>
+                            <div class="button-group">
+                                <button type="button" class="alignment-btn" data-field="about-desc-align" data-value="left">
+                                    <i class="fas fa-align-left"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="about-desc-align" data-value="center">
+                                    <i class="fas fa-align-center"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="about-desc-align" data-value="right">
+                                    <i class="fas fa-align-right"></i>
+                                </button>
+                                <button type="button" class="alignment-btn" data-field="about-desc-align" data-value="justify">
+                                    <i class="fas fa-align-justify"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group" style="width: 120px;">
+                            <label>Interlinea</label>
+                            <select class="form-control" data-field="about-desc-lineheight">
+                                <option value="1.0">1.0</option>
+                                <option value="1.2">1.2</option>
+                                <option value="1.4">1.4</option>
+                                <option value="1.6" selected>1.6</option>
+                                <option value="1.8">1.8</option>
+                                <option value="2.0">2.0</option>
+                                <option value="2.2">2.2</option>
+                                <option value="2.5">2.5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0;">Features</h3>
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                Gestisci le caratteristiche chiave visualizzate nella sezione About
+                            </p>
+                        </div>
+                        <button class="btn btn-success" onclick="addAboutFeature()">
+                            <i class="fas fa-plus"></i> Aggiungi Feature
+                        </button>
+                    </div>
+                    
+                    <div class="form-row" style="margin-bottom: 20px;">
+                        <div class="form-group" style="width: 200px;">
+                            <label>Posizione Features</label>
+                            <select class="form-control" data-field="about-features-position">
+                                <option value="bottom" selected>Sotto Descrizione</option>
+                                <option value="top">Sopra Descrizione</option>
+                                <option value="left">Sinistra Descrizione</option>
+                                <option value="right">Destra Descrizione</option>
+                            </select>
+                            <small class="form-text">Dove visualizzare le features</small>
+                        </div>
+                    </div>
+                    
+                    <div id="about-features-list" class="about-features-list">
+                        <!-- Le features verranno caricate dinamicamente -->
+                    </div>
+                </div>
+                
+                <!-- Immagine -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0;">Immagine</h3>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="about-image-enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div id="about-image-settings">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Percorso Immagine</label>
+                                <input type="text" class="form-control" data-field="about-image-src" placeholder="images/about-visual.jpg">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Testo Alternativo</label>
+                                <input type="text" class="form-control" data-field="about-image-alt" placeholder="Trading">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Posizione</label>
+                                <select class="form-control" data-field="about-image-position">
+                                    <option value="left">Sinistra</option>
+                                    <option value="right" selected>Destra</option>
+                                    <option value="top">Sopra</option>
+                                    <option value="bottom">Sotto</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Larghezza (%)</label>
+                                <input type="number" class="form-control" data-field="about-image-width" value="100" min="50" max="150">
+                            </div>
+                            <div class="form-group">
+                                <label>Opacità (%)</label>
+                                <input type="number" class="form-control" data-field="about-image-opacity" value="100" min="0" max="100">
+                            </div>
+                        </div>
+                        
+                        <!-- Bordo -->
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <label style="margin: 0; font-weight: 600;">Bordo</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="about-image-border-enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div id="about-image-border-settings" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Colore</label>
+                                        <input type="color" class="form-control" data-field="about-image-border-color" value="#ffffff">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Larghezza (px)</label>
+                                        <input type="number" class="form-control" data-field="about-image-border-width" value="2" min="1" max="20">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ombra -->
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <label style="margin: 0; font-weight: 600;">Ombra</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="about-image-shadow-enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div id="about-image-shadow-settings" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Sfocatura (px)</label>
+                                        <input type="number" class="form-control" data-field="about-image-shadow-blur" value="20" min="0" max="50">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Colore</label>
+                                        <input type="color" class="form-control" data-field="about-image-shadow-color" value="#000000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bagliore -->
+                        <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <label style="margin: 0; font-weight: 600;">Bagliore</label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="about-image-glow-enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div id="about-image-glow-settings" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Sfocatura (px)</label>
+                                        <input type="number" class="form-control" data-field="about-image-glow-blur" value="20" min="0" max="50">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Colore</label>
+                                        <input type="color" class="form-control" data-field="about-image-glow-color" value="#C8A25E">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0;">Pulsante CTA</h3>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="about-cta-enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div id="about-cta-settings">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Testo Pulsante (IT)</label>
+                                <input type="text" class="form-control" data-field="about-cta-text-it" placeholder="Inizia Ora">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Testo Pulsante (EN)</label>
+                                <input type="text" class="form-control" data-field="about-cta-text-en" placeholder="Start Now">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Link</label>
+                                <input type="text" class="form-control" data-field="about-cta-link" placeholder="#contact">
+                                <small class="form-text">URL o ancora interna (es: #contact, https://example.com)</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Allineamento</label>
+                                <select class="form-control" data-field="about-cta-align">
+                                    <option value="left" selected>Sinistra</option>
+                                    <option value="center">Centro</option>
+                                    <option value="right">Destra</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; gap: 0.5rem;">
+                                <input type="checkbox" id="about-cta-overlay" checked>
+                                <span>Apri overlay selezione strategie</span>
+                            </label>
+                            <small class="form-text">Se attivo, il pulsante aprirà l'overlay per selezionare una strategia</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="saveAboutSettings()">
+                    <i class="fas fa-save"></i> Salva Impostazioni About
+                </button>
+            </section>
+
+            <!-- Agents Benefits Section -->
+            <section class="admin-section" id="section-agents">
+                <h2 class="section-title">Gestione Sezione Agenti</h2>
+                
+                <!-- Tabs Navigation -->
+                <div class="admin-tabs">
+                    <button class="admin-tab active" data-tab="agents-general">
+                        <i class="fas fa-cog"></i>
+                        <span class="tab-label" data-tab-id="agents-general">Impostazioni Generali</span>
+                    </button>
+                    <button class="admin-tab" data-tab="agents-cards">
+                        <i class="fas fa-th-large"></i>
+                        <span class="tab-label" data-tab-id="agents-cards">Benefit Cards</span>
+                    </button>
+                </div>
+                
+                <!-- Tab Content: Impostazioni Generali -->
+                <div class="tab-content active" id="tab-agents-general">
+                    <div class="card">
+                        <h3 style="margin-bottom: 20px; color: #C8A25E;">
+                            <i class="fas fa-heading"></i> Titolo Sezione
+                        </h3>
+                        
+                        <div class="form-group">
+                            <label>Titolo (IT)</label>
+                            <input type="text" class="form-control" data-field="agents-title-it" placeholder="Diventa un Agente">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Titolo (EN)</label>
+                            <input type="text" class="form-control" data-field="agents-title-en" placeholder="Become an Agent">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Dimensione Font Titolo</label>
+                            <select class="form-control" data-field="agents-title-font-size">
+                                <option value="24px">24px</option>
+                                <option value="28px">28px</option>
+                                <option value="32px">32px</option>
+                                <option value="36px" selected>36px</option>
+                                <option value="40px">40px</option>
+                                <option value="44px">44px</option>
+                                <option value="48px">48px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Stile Titolo</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="agents-title-bold">
+                                    <i class="fas fa-bold"></i> Grassetto
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-title-italic">
+                                    <i class="fas fa-italic"></i> Corsivo
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-title-underline">
+                                    <i class="fas fa-underline"></i> Sottolineato
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 style="margin-bottom: 20px; color: #C8A25E;">
+                            <i class="fas fa-align-left"></i> Sottotitolo Sezione
+                        </h3>
+                        
+                        <div class="form-group">
+                            <label>Sottotitolo (IT)</label>
+                            <input type="text" class="form-control" data-field="agents-subtitle-it" placeholder="Guadagna promuovendo i nostri servizi">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Sottotitolo (EN)</label>
+                            <input type="text" class="form-control" data-field="agents-subtitle-en" placeholder="Earn by promoting our services">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Dimensione Font Sottotitolo</label>
+                            <select class="form-control" data-field="agents-subtitle-font-size">
+                                <option value="14px">14px</option>
+                                <option value="16px">16px</option>
+                                <option value="18px" selected>18px</option>
+                                <option value="20px">20px</option>
+                                <option value="22px">22px</option>
+                                <option value="24px">24px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Stile Sottotitolo</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="agents-subtitle-bold">
+                                    <i class="fas fa-bold"></i> Grassetto
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-subtitle-italic">
+                                    <i class="fas fa-italic"></i> Corsivo
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-subtitle-underline">
+                                    <i class="fas fa-underline"></i> Sottolineato
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 style="margin-bottom: 20px; color: #C8A25E;">
+                            <i class="fas fa-bullhorn"></i> Call-to-Action (CTA)
+                        </h3>
+                        
+                        <div class="form-group">
+                            <label>Titolo CTA (IT)</label>
+                            <input type="text" class="form-control" data-field="agents-cta-title-it" placeholder="Pronto a iniziare?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Titolo CTA (EN)</label>
+                            <input type="text" class="form-control" data-field="agents-cta-title-en" placeholder="Ready to start?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Dimensione Font Titolo CTA</label>
+                            <select class="form-control" data-field="agents-cta-title-font-size">
+                                <option value="20px">20px</option>
+                                <option value="24px">24px</option>
+                                <option value="28px" selected>28px</option>
+                                <option value="32px">32px</option>
+                                <option value="36px">36px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Stile Titolo CTA</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="agents-cta-title-bold">
+                                    <i class="fas fa-bold"></i> Grassetto
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-cta-title-italic">
+                                    <i class="fas fa-italic"></i> Corsivo
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-cta-title-underline">
+                                    <i class="fas fa-underline"></i> Sottolineato
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descrizione CTA (IT)</label>
+                            <input type="text" class="form-control" data-field="agents-cta-desc-it" placeholder="Unisciti al nostro programma agenti">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descrizione CTA (EN)</label>
+                            <input type="text" class="form-control" data-field="agents-cta-desc-en" placeholder="Join our agent program">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Dimensione Font Descrizione CTA</label>
+                            <select class="form-control" data-field="agents-cta-desc-font-size">
+                                <option value="14px">14px</option>
+                                <option value="16px" selected>16px</option>
+                                <option value="18px">18px</option>
+                                <option value="20px">20px</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Stile Descrizione CTA</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="agents-cta-desc-bold">
+                                    <i class="fas fa-bold"></i> Grassetto
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-cta-desc-italic">
+                                    <i class="fas fa-italic"></i> Corsivo
+                                </button>
+                                <button type="button" class="style-btn" data-field="agents-cta-desc-underline">
+                                    <i class="fas fa-underline"></i> Sottolineato
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Testo Pulsante (IT)</label>
+                            <input type="text" class="form-control" data-field="agents-cta-btn-it" placeholder="Diventa Agente">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Testo Pulsante (EN)</label>
+                            <input type="text" class="form-control" data-field="agents-cta-btn-en" placeholder="Become Agent">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Link Pulsante</label>
+                            <input type="text" class="form-control" data-field="agents-cta-btn-link" placeholder="#contact">
+                            <small class="form-text">Inserisci l'URL o l'ancora (es: #contact, https://example.com)</small>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="saveAgentsSettings()">
+                        <i class="fas fa-save"></i> Salva Impostazioni Generali
+                    </button>
+                </div>
+                
+                <!-- Tab Content: Benefit Cards -->
+                <div class="tab-content" id="tab-agents-cards">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                Gestisci le benefit cards visualizzate nella sezione Agenti (massimo 6 cards)
+                            </p>
+                            <button class="btn btn-success" onclick="addBenefitCard()" id="add-benefit-btn">
+                                <i class="fas fa-plus"></i> Aggiungi Card
+                            </button>
+                        </div>
+                        
+                        <div id="benefits-list" class="benefits-list">
+                            <!-- Le cards verranno caricate dinamicamente -->
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="saveSection('agents')">
+                        <i class="fas fa-save"></i> Salva Benefit Cards
+                    </button>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="admin-section" id="section-contact">
+                <h2 class="section-title">Gestione Sezione Contatti</h2>
+                
+                <!-- Titolo e Sottotitolo -->
+                <div class="card">
+                    <h3>Titolo e Sottotitolo</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Titolo (IT)</label>
+                            <input type="text" class="form-control" data-field="contact-title-it" placeholder="Contattaci">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Titolo (EN)</label>
+                            <input type="text" class="form-control" data-field="contact-title-en" placeholder="Contact Us">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Font Size (px)</label>
+                            <select class="form-control" data-field="contact-title-font-size">
+                                <option value="24">24</option>
+                                <option value="28">28</option>
+                                <option value="32">32</option>
+                                <option value="36" selected>36</option>
+                                <option value="40">40</option>
+                                <option value="48">48</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stile Testo</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="contact-title-bold" title="Grassetto">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="contact-title-italic" title="Corsivo">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="contact-title-underline" title="Sottolineato">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 1;">
+                            <label>Sottotitolo (IT)</label>
+                            <input type="text" class="form-control" data-field="contact-subtitle-it" placeholder="Siamo qui per rispondere a tutte le tue domande">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>Sottotitolo (EN)</label>
+                            <input type="text" class="form-control" data-field="contact-subtitle-en" placeholder="We're here to answer all your questions">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group" style="width: 120px;">
+                            <label>Font Size (px)</label>
+                            <select class="form-control" data-field="contact-subtitle-font-size">
+                                <option value="14">14</option>
+                                <option value="16">16</option>
+                                <option value="18" selected>18</option>
+                                <option value="20">20</option>
+                                <option value="24">24</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stile Testo</label>
+                            <div class="button-group">
+                                <button type="button" class="style-btn" data-field="contact-subtitle-bold" title="Grassetto">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="contact-subtitle-italic" title="Corsivo">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button type="button" class="style-btn" data-field="contact-subtitle-underline" title="Sottolineato">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Items -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0;">Contact Items</h3>
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                Aggiungi o rimuovi metodi di contatto. Puoi abilitare/disabilitare ogni item.
+                            </p>
+                        </div>
+                        <button class="btn btn-success" onclick="addContactItem()">
+                            <i class="fas fa-plus"></i> Aggiungi Item
+                        </button>
+                    </div>
+                    
+                    <div id="contact-items-list" class="contact-items-list">
+                        <!-- Gli items verranno caricati dinamicamente -->
+                    </div>
+                </div>
+                
+                <!-- Contact Form Settings -->
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <h3 style="margin: 0 0 5px 0;">Form di Contatto</h3>
+                            <p style="margin: 0; color: var(--text-secondary);">
+                                Gestisci il form di contatto e le sue etichette
+                            </p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="contact-form-enabled" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div id="contact-form-settings">
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Etichetta Nome (IT)</label>
+                                <input type="text" class="form-control" data-field="contact-form-name-it" placeholder="Nome">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Etichetta Nome (EN)</label>
+                                <input type="text" class="form-control" data-field="contact-form-name-en" placeholder="Name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Etichetta Email (IT)</label>
+                                <input type="text" class="form-control" data-field="contact-form-email-it" placeholder="Email">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Etichetta Email (EN)</label>
+                                <input type="text" class="form-control" data-field="contact-form-email-en" placeholder="Email">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Etichetta Messaggio (IT)</label>
+                                <input type="text" class="form-control" data-field="contact-form-message-it" placeholder="Messaggio">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Etichetta Messaggio (EN)</label>
+                                <input type="text" class="form-control" data-field="contact-form-message-en" placeholder="Message">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Testo Pulsante (IT)</label>
+                                <input type="text" class="form-control" data-field="contact-form-submit-it" placeholder="Invia Messaggio">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Testo Pulsante (EN)</label>
+                                <input type="text" class="form-control" data-field="contact-form-submit-en" placeholder="Send Message">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="saveContactSettings()">
+                    <i class="fas fa-save"></i> Salva Impostazioni Contatti
+                </button>
+            </section>
+
+            <!-- Images Section -->
+            <section class="admin-section" id="section-images">
+                <h2 class="section-title">Gestione Immagini</h2>
+                
+                <div class="card">
+                    <h3>Logo</h3>
+                    <div class="image-upload-area">
+                        <div class="upload-box">
+                            <label>Logo Tema Chiaro</label>
+                            <input type="file" accept="image/*" data-image="logo-light">
+                            <div class="image-preview" id="preview-logo-light"></div>
+                            <input type="text" class="form-control" placeholder="Path: images/logo-light.png" id="path-logo-light">
+                        </div>
+                        <div class="upload-box">
+                            <label>Logo Tema Scuro</label>
+                            <input type="file" accept="image/*" data-image="logo-dark">
+                            <div class="image-preview" id="preview-logo-dark"></div>
+                            <input type="text" class="form-control" placeholder="Path: images/logo-dark.png" id="path-logo-dark">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Favicon</h3>
+                    <div class="upload-box">
+                        <input type="file" accept="image/*" data-image="favicon">
+                        <div class="image-preview" id="preview-favicon"></div>
+                        <input type="text" class="form-control" placeholder="Path: images/favicon.png" id="path-favicon">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Immagini Sezioni</h3>
+                    <div class="upload-box">
+                        <label>Immagine About</label>
+                        <input type="file" accept="image/*" data-image="about">
+                        <div class="image-preview" id="preview-about"></div>
+                        <input type="text" class="form-control" placeholder="Path: images/about-visual.jpg" id="path-about">
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('images')">
+                    <i class="fas fa-save"></i> Salva Immagini
+                </button>
+            </section>
+
+            <!-- MyFxBook Section -->
+            <section class="admin-section" id="section-myfxbook">
+                <h2 class="section-title">Configurazione MyFxBook</h2>
+                
+                <div class="card">
+                    <h3>API Settings</h3>
+                    <div class="form-group">
+                        <label>Widget ID</label>
+                        <input type="text" class="form-control" id="myfxbook-widget-id">
+                        <small>ID del widget MyFxBook da incorporare</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Account ID</label>
+                        <input type="text" class="form-control" id="myfxbook-account-id">
+                    </div>
+                    <div class="form-group">
+                        <label>API URL</label>
+                        <input type="url" class="form-control" id="myfxbook-api-url">
+                        <small>URL endpoint API MyFxBook</small>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Test Connessione</h3>
+                    <button class="btn btn-secondary" onclick="testMyFxBook()">
+                        <i class="fas fa-plug"></i> Testa Connessione
+                    </button>
+                    <div id="myfxbook-test-result" class="test-result"></div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('myfxbook')">
+                    <i class="fas fa-save"></i> Salva Configurazione
+                </button>
+            </section>
+
+            <!-- Debug Section -->
+            <section class="admin-section" id="section-debug">
+                <h2 class="section-title">Impostazioni Debug</h2>
+                
+                <div class="card">
+                    <h3>Modalità Debug</h3>
+                    <div class="toggle-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="debug-enabled" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                            <span>Abilita Debug Mode</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Livelli di Log</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" class="debug-level" value="info" checked>
+                            <span>Info</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="debug-level" value="warning" checked>
+                            <span>Warning</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="debug-level" value="error" checked>
+                            <span>Error</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" class="debug-level" value="debug">
+                            <span>Debug</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Console Log</h3>
+                    <div class="toggle-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="console-log-enabled">
+                            <span class="toggle-slider"></span>
+                            <span>Mostra log in console browser</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Visual Debug</h3>
+                    <div class="toggle-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="visual-debug-enabled">
+                            <span class="toggle-slider"></span>
+                            <span>Mostra indicatori visivi di debug</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSection('debug')">
+                    <i class="fas fa-save"></i> Salva Impostazioni Debug
+                </button>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Context Menu per rinominazione sezioni -->
+    <div class="context-menu" id="nav-context-menu" style="display: none;">
+        <div class="context-menu-item" id="context-rename">
+            <i class="fas fa-edit"></i>
+            <span>Rinomina</span>
+        </div>
+    </div>
+
+    <!-- Modal per rinominazione -->
+    <div class="modal-overlay" id="rename-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Rinomina Sezione</h3>
+                <button class="modal-close" id="close-rename-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nuovo Nome</label>
+                    <input type="text" id="rename-input" class="form-control" placeholder="Inserisci nuovo nome">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-rename">
+                    <i class="fas fa-times"></i> Chiudi
+                </button>
+                <button class="btn btn-primary" id="save-rename">
+                    <i class="fas fa-save"></i> Salva
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/admin.js"></script>
+    
+</body>
+</html>

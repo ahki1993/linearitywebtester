@@ -1,0 +1,154 @@
+/* ========================================
+   RESPONSIVE STYLES
+   Media queries e ottimizzazioni mobile
+   ======================================== */
+
+/* Desktop Large (1440px+) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (max-width: 1439px) {
+    .container {
+        max-width: 1100px;
+    }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (max-width: 1023px) {
+    :root {
+        --spacing-xxl: 3.5rem;
+        --spacing-xl: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: var(--text-3xl);
+    }
+}
+
+/* Tablet Portrait (600px - 767px) */
+@media (max-width: 767px) {
+    :root {
+        --spacing-xxl: 3rem;
+        --spacing-xl: 2rem;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+    }
+    
+    .main-content {
+        padding-top: 70px;
+    }
+}
+
+/* Mobile Large (480px - 599px) */
+@media (max-width: 599px) {
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+/* Mobile (max 479px) */
+@media (max-width: 479px) {
+    :root {
+        --spacing-xxl: 2.5rem;
+        --spacing-xl: 1.5rem;
+        --spacing-lg: 1.25rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .section-subtitle {
+        font-size: var(--text-sm);
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-link {
+        padding: 1rem;
+    }
+    
+    .social-link {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-header,
+    .theme-toggle,
+    .mobile-menu-toggle,
+    .carousel-nav,
+    .main-footer {
+        display: none !important;
+    }
+    
+    .main-content {
+        padding-top: 0;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-sm: 0 0 0 1px currentColor;
+        --shadow-md: 0 0 0 2px currentColor;
+        --shadow-lg: 0 0 0 3px currentColor;
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Dark Mode Override (System Preference) */
+@media (prefers-color-scheme: dark) {
+    body:not(.theme-light) {
+        /* Già gestito dalle variabili CSS predefinite */
+    }
+}
+
+/* Light Mode Override (System Preference) */
+@media (prefers-color-scheme: light) {
+    body:not(.theme-dark) {
+        /* Le variabili del tema chiaro si applicano automaticamente */
+    }
+}

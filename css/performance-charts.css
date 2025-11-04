@@ -1,0 +1,219 @@
+/**
+ * PERFORMANCE CHARTS STYLES
+ * Stili per i grafici di performance con carousel
+ */
+
+.trading-card-preview {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.chart-carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.chart-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    pointer-events: none;
+}
+
+.chart-slide.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.chart-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.chart-stats {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.chart-stat-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--primary-color-alpha);
+    border: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.chart-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    height: 264px; /* Aumentato del 10% (240px + 24px = 264px) */
+    margin-bottom: 10px;
+}
+
+.chart-canvas-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Controlli carousel */
+.chart-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chart-nav-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chart-nav-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: var(--bg-primary);
+    transform: scale(1.1);
+}
+
+.chart-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.chart-indicators {
+    display: flex;
+    gap: 8px;
+}
+
+.chart-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chart-indicator.active {
+    background: var(--primary-color);
+    transform: scale(1.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trading-card-preview {
+        padding: 15px;
+    }
+    
+    .chart-title {
+        font-size: 0.95rem;
+    }
+    
+    .chart-canvas-wrapper {
+        height: 220px; /* Aumentato del 10% (200px + 20px = 220px) */
+    }
+    
+    .stat-value {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trading-card-preview {
+        padding: 12px; /* Ridotto per massimizzare spazio grafico */
+    }
+    
+    .chart-title {
+        font-size: 0.85rem; /* Ridotto per mobile */
+    }
+    
+    .chart-canvas-wrapper {
+        height: 332px; /* Aumentato ulteriormente: +10% (302px * 1.10 = 332px) */
+        margin-bottom: 10px;
+    }
+    
+    .chart-stat-badge {
+        padding: 4px 8px; /* Ridotto per compattezza */
+    }
+    
+    .stat-value {
+        font-size: 0.75rem; /* Ridotto per mobile */
+    }
+    
+    .chart-header {
+        margin-bottom: 12px;
+        gap: 8px; /* Gap ridotto per mobile */
+    }
+}
+
+/* Tema specifico */
+.theme-dark .trading-card-preview {
+    background: #1a1a1a;
+}
+
+.theme-light .trading-card-preview {
+    background: #F8F6F3;
+}
+
+/* Animazione per auto-rotate */
+@keyframes chartFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chart-slide.active {
+    animation: chartFadeIn 0.6s ease-out;
+}

@@ -1,0 +1,215 @@
+/* ========================================
+   STATISTICS & PERFORMANCE SECTIONS
+   ======================================== */
+
+.statistics-section {
+    background: var(--bg-primary);
+}
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    color: var(--bg-primary);
+    flex-shrink: 0;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-description {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+/* Performance Section */
+.performance-section {
+    background: var(--bg-secondary);
+}
+
+.performance-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.performance-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.performance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-bg-1);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.performance-card:hover::before {
+    opacity: 1;
+}
+
+.performance-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.performance-card.featured {
+    background: var(--gradient-primary);
+    color: var(--bg-primary);
+}
+
+.performance-card.featured .performance-label,
+.performance-card.featured .performance-value {
+    color: var(--bg-primary);
+}
+
+.performance-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto var(--spacing-md);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-round);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-3xl);
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.performance-card.featured .performance-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--bg-primary);
+}
+
+.performance-label {
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.performance-value {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-extrabold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.performance-trend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;
+}
+
+.performance-trend.positive {
+    color: var(--success-color);
+}
+
+.performance-trend.negative {
+    color: var(--error-color);
+}
+
+/* MyFxBook Widget */
+.myfxbook-widget {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.widget-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.myfxbook-container {
+    min-height: 400px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-placeholder {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.widget-placeholder i {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--spacing-md);
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .performance-highlights {
+        grid-template-columns: 1fr;
+    }
+    
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+}

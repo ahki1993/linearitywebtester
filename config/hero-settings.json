@@ -1,0 +1,99 @@
+{
+  "title": {
+    "it": "Linearity FX",
+    "en": "Linearity FX",
+    "fontSize": "48",
+    "bold": true,
+    "italic": false,
+    "underline": false,
+    "align": "center",
+    "lineHeight": "110",
+    "marginBottom": "20"
+  },
+  "subtitle": {
+    "it": "Strategie di trading progettate per te",
+    "en": "Trading strategies built for you",
+    "fontSize": "20",
+    "bold": false,
+    "italic": false,
+    "underline": false,
+    "align": "center",
+    "lineHeight": "140",
+    "marginTop": "10"
+  },
+  "statsSettings": {
+    "numberFontSize": "18",
+    "numberBold": true,
+    "numberItalic": false,
+    "numberUnderline": false,
+    "labelFontSize": "12",
+    "labelBold": false,
+    "labelItalic": false,
+    "labelUnderline": false,
+    "gap": "24",
+    "layout": "grid"
+  },
+  "stats": [
+    {
+      "enabled": true,
+      "id": 1,
+      "label": {
+        "en": "Strategies",
+        "it": "PROFITTO ANNUALE"
+      },
+      "number": "+100%"
+    },
+    {
+      "enabled": true,
+      "id": 2,
+      "label": {
+        "en": "Avg. performance",
+        "it": "ANNI DI ESPERIENZA"
+      },
+      "number": "5"
+    },
+    {
+      "enabled": true,
+      "id": 3,
+      "label": {
+        "en": "Support",
+        "it": "utenti attivi "
+      },
+      "number": "55"
+    }
+  ],
+  "visual": {
+    "enabled": true,
+    "position": "right",
+    "integratePerformanceEditor": true
+  },
+  "ctaSettings": {
+    "enabled": true,
+    "align": "center",
+    "gap": "16"
+  },
+  "ctaButtons": [
+    {
+      "enabled": true,
+      "id": 1,
+      "link": "#strategies",
+      "size": "large",
+      "style": "primary",
+      "text": {
+        "en": "Discover Strategies",
+        "it": "Scopri le Strategie"
+      }
+    },
+    {
+      "enabled": true,
+      "id": 2,
+      "link": "#results",
+      "size": "large",
+      "style": "secondary",
+      "text": {
+        "en": "See Results",
+        "it": "Vedi i Risultati"
+      }
+    }
+  ]
+}

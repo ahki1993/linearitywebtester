@@ -1,0 +1,94 @@
+{
+  "title": {
+    "it": "Il Nostro Progetto",
+    "en": "Our Project",
+    "fontSize": "36",
+    "bold": true,
+    "italic": false,
+    "underline": false,
+    "align": "center",
+    "marginBottom": "20"
+  },
+  "description": {
+    "it": "Linearity è nato dalla passione per il trading e dall'obiettivo di democratizzare l'accesso ai mercati finanziari. Offriamo un ecosistema completo di strategie di copy trading, progettate per adattarsi a diversi profili di rischio e obiettivi di investimento.",
+    "en": "Linearity was born from a passion for trading and the goal of democratizing access to financial markets. We offer a complete ecosystem of copy trading strategies, designed to adapt to different risk profiles and investment objectives.",
+    "fontSize": "18",
+    "bold": false,
+    "italic": false,
+    "underline": false,
+    "align": "center",
+    "lineHeight": "1.6"
+  },
+  "features": [
+    {
+      "enabled": true,
+      "icon": "rocket",
+      "id": 1,
+      "text": {
+        "en": "24/7 automated trading",
+        "it": "Trading automatico 24/7"
+      }
+    },
+    {
+      "enabled": true,
+      "icon": "check-circle",
+      "id": 2,
+      "text": {
+        "en": "Tested and verified strategies",
+        "it": "Strategie testate e verificate"
+      }
+    },
+    {
+      "enabled": true,
+      "icon": "check-circle",
+      "id": 3,
+      "text": {
+        "en": "Dedicated support",
+        "it": "Supporto dedicato"
+      }
+    },
+    {
+      "enabled": true,
+      "icon": "check-circle",
+      "id": 4,
+      "text": {
+        "en": "Total transparency",
+        "it": "Trasparenza totale"
+      }
+    }
+  ],
+  "featuresPosition": "right",
+  "image": {
+    "enabled": false,
+    "src": "images/about-visual.jpg",
+    "alt": "Trading",
+    "position": "right",
+    "width": "100",
+    "opacity": "100",
+    "border": {
+      "enabled": false,
+      "color": "#ffffff",
+      "width": "2"
+    },
+    "shadow": {
+      "enabled": false,
+      "blur": "20",
+      "color": "#000000"
+    },
+    "glow": {
+      "enabled": false,
+      "blur": "20",
+      "color": "#c8a25e"
+    }
+  },
+  "cta": {
+    "enabled": true,
+    "text": {
+      "it": "Inizia Ora",
+      "en": "Start Now"
+    },
+    "link": "#contact",
+    "align": "center",
+    "openStrategyOverlay": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "consoleOutput": true,
+  "enabled": false,
+  "filters": {
+    "excludeModules": [],
+    "includeOnly": []
+  },
+  "levels": {
+    "debug": false,
+    "error": true,
+    "info": true,
+    "warning": true
+  },
+  "logToFile": false,
+  "performance": {
+    "trackApiCalls": true,
+    "trackLoadTime": true,
+    "trackUserInteractions": false
+  },
+  "showStackTrace": false,
+  "showTimestamps": true,
+  "visualIndicators": false
+}

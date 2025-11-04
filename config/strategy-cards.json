@@ -1,0 +1,54 @@
+{
+  "en": {
+    "cards": [
+      {
+        "buttonLink": "https://t.me/linearitytrading",
+        "buttonText": "Start Now",
+        "description": "<p>Conservative strategy ideal for those seeking <strong>steady growth</strong> with minimal risk.</p><ul><li>Reduced volatility</li><li>Capital protection</li><li>Stable returns</li></ul>",
+        "id": "low-risk",
+        "title": "Low Risk"
+      },
+      {
+        "buttonLink": "https://t.me/linearitytrading",
+        "buttonText": "Start Now",
+        "description": "<p>Perfect balance between <em>returns</em> and <em>security</em> for moderate investors.</p><ul><li>Balanced growth</li><li>Active risk management</li><li>Optimal diversification</li></ul>",
+        "id": "mid-risk",
+        "title": "Mid Risk"
+      },
+      {
+        "buttonLink": "https://t.me/linearitytrading",
+        "buttonText": "Start Now",
+        "description": "<p>Aggressive strategy to maximize <strong>potential profits</strong> with high risk tolerance.</p><ul><li>High returns</li><li>Premium opportunities</li><li>Dynamic trading</li></ul>",
+        "id": "high-risk",
+        "title": "High Risk"
+      }
+    ],
+    "overlayTitle": "Which strategy do you want to choose?"
+  },
+  "it": {
+    "cards": [
+      {
+        "buttonLink": "https://t.me/linearitytrading",
+        "buttonText": "Inizia Ora",
+        "description": "<p>Strategia conservativa ideale per chi cerca <strong>crescita costante</strong> con rischio minimo.</p><ul><li>Volatilità ridotta</li><li>Protezione del capitale</li><li>Rendimenti stabili</li></ul>",
+        "id": "low-risk",
+        "title": "Low Risk"
+      },
+      {
+        "buttonLink": "https://t.me/linearitytrading",
+        "buttonText": "Inizia Ora",
+        "description": "<p>Bilanciamento perfetto tra <em>rendimento</em> e <em>sicurezza</em> per investitori moderati.</p><ul><li>Crescita equilibrata</li><li>Risk management attivo</li><li>Diversificazione ottimale</li></ul>",
+        "id": "mid-risk",
+        "title": "Mid Risk"
+      },
+      {
+        "buttonLink": "https://t.me/linearitytrading",
+        "buttonText": "Inizia Ora",
+        "description": "<p>Strategia aggressiva per massimizzare i <strong>profitti potenziali</strong> con tolleranza al rischio elevata.</p><ul><li>Rendimenti elevati</li><li>Opportunità premium</li><li>Trading dinamico</li></ul>",
+        "id": "high-risk",
+        "title": "High Risk"
+      }
+    ],
+    "overlayTitle": ""
+  }
+}

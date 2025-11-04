@@ -1,0 +1,24 @@
+{
+  "logo": {
+    "light": "images/logo-light.png",
+    "dark": "images/logo-dark.png"
+  },
+  "favicon": "images/favicon.png",
+  "flags": {
+    "it": "images/flags/it.png",
+    "en": "images/flags/en.png"
+  },
+  "sections": {
+    "about": "images/about-visual.jpg",
+    "hero": "images/hero-bg.jpg"
+  },
+  "strategies": {
+    "low": "images/strategies/low-risk.svg",
+    "medium": "images/strategies/medium-risk.svg",
+    "high": "images/strategies/high-risk.svg"
+  },
+  "placeholders": {
+    "user": "images/placeholder-user.png",
+    "chart": "images/placeholder-chart.png"
+  }
+}

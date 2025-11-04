@@ -1,0 +1,75 @@
+{
+  "title": {
+    "it": "Contattaci",
+    "en": "Contact Us",
+    "fontSize": "36",
+    "bold": true,
+    "italic": false,
+    "underline": false
+  },
+  "subtitle": {
+    "it": "Siamo qui per rispondere a tutte le tue domande",
+    "en": "We're here to answer all your questions",
+    "fontSize": "18",
+    "bold": false,
+    "italic": false,
+    "underline": false
+  },
+  "contactItems": [
+    {
+      "content": "info@linearityfx.tech",
+      "enabled": true,
+      "icon": "envelope",
+      "id": 1,
+      "link": "mailto:info@linearityfx.tech",
+      "linkType": "email",
+      "title": {
+        "en": "Email",
+        "it": "Email"
+      }
+    },
+    {
+      "content": "@linearity_support",
+      "enabled": true,
+      "icon": "telegram",
+      "id": 3,
+      "link": "https://t.me/linearity_support",
+      "linkType": "url",
+      "title": {
+        "en": "Telegram",
+        "it": "Telegram"
+      }
+    },
+    {
+      "id": 4,
+      "enabled": true,
+      "icon": "instagram",
+      "title": {
+        "it": "Instagram",
+        "en": "Instagram"
+      },
+      "content": "@linearityfx",
+      "link": "https://www.instagram.com/linearityfx/",
+      "linkType": "url"
+    }
+  ],
+  "contactForm": {
+    "enabled": false,
+    "nameLabel": {
+      "it": "Nome",
+      "en": "Name"
+    },
+    "emailLabel": {
+      "it": "Email",
+      "en": "Email"
+    },
+    "messageLabel": {
+      "it": "Messaggio",
+      "en": "Message"
+    },
+    "submitButton": {
+      "it": "Invia Messaggio",
+      "en": "Send Message"
+    }
+  }
+}
